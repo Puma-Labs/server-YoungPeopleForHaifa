@@ -1,0 +1,96 @@
+footer
+  width: 100%
+  padding: 48px
+  padding-bottom: 24px
+  background-color: $blue_background
+  .content
+    width: 100%
+    .card
+      padding: 0.9rem 1.5rem 2.8rem
+      border-radius: 10px
+      background-color: $background_main
+      .options-menu
+        @include optionsBtn(32px, $color-black)
+      .wrapper
+        display: flex
+        gap: 3rem
+        .banner
+          display: flex
+          align-items: center
+          justify-content: center
+          width: 100%
+          height: 348px
+          align-self: end
+          background-color: $blue_background
+          border: 1px solid $color-black
+          border-radius: 38px
+        .menu
+          width: 100%       
+          .menu-item
+            display: flex
+            flex-direction: row
+            align-items: center
+            justify-content: space-between
+            width: 100%
+            height: 72px
+            font-size: 32px
+            text-transform: uppercase
+            border-bottom: 1px solid $color-black
+            &:not(.disabled)
+              .btn-arrow
+                @include slide-button(15px, $color-black, $font-black, $blue_background, $color-black, $font_white)
+            &:hover
+              &:not(.disabled)
+                .btn-arrow
+                  color: $font_white
+                  &::after
+                    transform: translateY(0%)
+              
+            &.disabled
+              cursor: default
+              color: $font_disabled
+              .btn-arrow
+                width: 40px
+                height: 40px
+                text-align: center
+                line-height: 40px
+                font-size: 15px
+                border: 1px solid $font_disabled
+                border-radius: 50%             
+                
+    .bottom-menu
+      display: flex
+      width: 100%
+      justify-content: space-between
+      margin-top: 1.6rem
+      padding-left: 0.5rem
+      .menu, .social
+        display: flex
+      .menu
+        gap: 1.8rem
+        .menu-item
+          display: flex
+          gap: 1.1rem
+          align-items: center
+          color: $font_white
+          font-size: 14px
+          font-weight: 500
+          text-transform: uppercase
+          line-height: 15px
+          .arrow
+            transition: transform 0.3s ease
+            font-size: 15px
+          &:hover
+            .arrow
+              transform: rotate(45deg)
+      .social
+        gap: 0.5rem
+        .menu-item
+          @include slide-button(20px, $color-white, $font_white, $background_white, $color-black, $font-black)
+          
+
+
+
+    
+
+

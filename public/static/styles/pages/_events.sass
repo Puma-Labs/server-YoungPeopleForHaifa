@@ -1,0 +1,274 @@
+@import '../layout/variables'
+
+.future-events-section,
+.all-events-section
+  margin-bottom: 9.4rem
+  .section-title
+    margin-bottom: 2.9rem
+    h2
+      line-height: 60px
+  .events-container
+    display: grid
+    grid-template-columns: repeat(auto-fill, minmax(358px, 1fr))
+    grid-gap: 24px
+    width: 100%
+    .event
+      padding: 0 1.2rem
+      padding-bottom: 1.2rem
+      border: $border_black
+      border-radius: 4px
+      background-color: $background_main
+      cursor: pointer
+      .options-menu
+        @include optionsBtn(30px, $color-black)
+      .img-container
+        width: 100%
+        height: 188px
+        border: 1px solid $color-black
+        margin-top: -3px
+        margin-bottom: 1.2rem
+        overflow: hidden
+        img
+          transition: transform .4s
+      .event-title, .event-info
+        text-align: center
+      .event-info
+        @include fontSmall
+        line-height: 16px
+        margin-top: 0.3rem  
+      &.event-1
+        background-color: $yellow_background
+      &:hover
+        .img-container
+          img
+            transform: scale(1.1)
+
+.all-events-section
+  margin-bottom: 16rem
+  .wrapper
+    display: flex
+    width: 100%
+    gap: 24px
+    .calendar-container
+      width: 358px
+      min-width: 358px
+      height: 222px
+      border: $border_black
+      border-radius: 8px
+    .events
+      width: 100%
+      .pagination
+        display: flex
+        align-items: center
+        justify-content: center
+        gap: 3.3rem
+        margin-top: 3.2rem
+        .prev-btn,
+        .next-btn
+          .btn-arrow
+            @include slide-button(15px, $color-black, $font-black, $blue_background, $color-black, $font_white)
+            &::after
+              transform: translateX(100%)
+          &:hover
+            .btn-arrow
+              color: $font_white
+              &::after
+                transform: translateX(0%)
+          &.rtl
+            .btn-arrow
+              transform: scaleX(-1)
+        .prev-btn
+          transform: scaleX(-1)
+        .pages
+          display: flex
+          gap: 0.5rem
+          .page-num
+            width: 40px
+            height: 40px
+            line-height: 40px
+            text-align: center
+            border: 1px solid transparent
+            border-radius: 50%
+            &:hover
+              border: $border_black
+            &.active
+              color: $font_white
+              background-color: $blue_background
+              border-color: transparent
+          .dots
+            display: block
+            width: 40px
+            height: 40px
+            line-height: 40px
+            text-align: center
+            letter-spacing: 0.5px
+            cursor: default
+
+
+
+
+
+
+
+
+//------------------------------------------------------
+
+
+
+  .text-container
+    @include fontBubble
+    padding: 1rem
+    background-color: $yellow_background
+    border: 1px solid $color_black
+    border-radius: 12px
+    &.left
+      border-bottom-left-radius: 0
+    &.right
+      border-bottom-right-radius: 0
+
+    p
+      @include fontBubble
+    p:not(:last-child)
+      margin-bottom: 0.4rem
+
+
+.slide-btn-big
+  display: flex
+  align-items: center
+  gap: 1rem
+  border: $border_black
+  border-radius: 30px
+  @include fontBtn
+  padding: 0.2rem
+  padding-left: 1.5rem
+  padding-right: 3.6rem
+  position: relative
+  .button-text
+    line-height: 40px
+    z-index: 2
+    transition: color 0.2s ease
+  .circle
+    line-height: 40px
+    position: absolute
+    right: 0.2rem
+    width: 40px
+    color: $color_white
+    background-color: $blue_background
+    border-radius: 30px
+    z-index: 1
+    text-align: right
+    padding-right: 0.8rem
+    transition: all 0.4s cubic-bezier(.49,-0.24,.54,1.27)
+  &:hover
+    .button-text
+      color: $color_white
+    .circle
+      width: calc(100% - 0.4rem)
+  &.rtl
+    padding-left: 3.6rem
+    padding-right: 1.5rem
+    .circle
+      left: calc(0.2rem)
+      right: unset
+      text-align: left
+      padding-left: 0.8rem
+      .arrow
+        transform: rotate(180deg)
+
+.frame
+  // width: 100%
+  // height: 100%
+  margin-top: 1px
+  margin-left: 1px
+  position: relative
+  background-color: $background_main
+  outline: $border_black
+  border-radius: 10px
+  box-sizing: border-box
+  &::after
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    width: calc(100% + 1px)
+    height: calc(100% + 1px)
+    border-radius: 10px
+    box-shadow: -12px 12px 0 0 $blue_background
+    z-index: -1
+  &.rtl
+    &::after
+      box-shadow: 12px 12px 0 0 $blue_background
+
+.options-menu-big
+  display: block
+  position: relative
+  width: 60px
+  min-width: 60px
+  height: 12px
+  span
+    position: absolute
+    background-color: $color_black
+    border-radius: 50%
+    top: 0
+    left: 24px
+    width: 12px
+    height: 100%
+  &:before,
+  &:after
+    content: ''
+    background-color: $color_black
+    position: absolute
+    border-radius: 50%
+    width: 12px
+    height: 100%
+    top: 0
+  &:before
+    left: 0
+  &:after
+    right: 0
+
+.input-wrapper
+  position: relative
+  label
+    position: absolute
+    top: -6px
+    left: 12px
+    background-color: $background_main
+    padding: 0 5px
+    font-size: 12px
+    font-weight: 600
+    letter-spacing: 0.5px
+  .input
+    width: 100%
+    height: 48px
+    padding: 0 1rem
+    background-color: $background_main
+    outline: none
+    border: $border_black
+    border-radius: 4px
+    letter-spacing: 0.5px
+  .copy-button
+    position: absolute
+    font-size: 22px
+    top: 14px
+    right: 12px
+  &.rtl
+    label
+      left: unset
+      right: 12px
+    .copy-button
+      right: unset
+      left: 12px
+      
+
+
+
+
+
+
+
+
+
+      
+      
+

@@ -1,0 +1,544 @@
+@import '../layout/variables'
+
+$section-gap: 2rem
+$shadow-width: 12px
+
+.about-section
+  margin-bottom: 9.6rem
+  .top
+    display: flex
+    align-items: center
+    justify-content: space-between
+    width: 100%
+    height: 48px
+    padding: 0.5rem 1.4rem
+    img
+      height: 24px
+  .center
+    display: flex
+    .info, .video
+      width: 50%
+    .info
+      padding: 2.25rem 1.5rem
+      padding-right: 1.9rem
+      .title
+        font-size: 72px
+        font-weight: 800
+        position: relative
+        z-index: 2
+      .description
+        position: relative
+        .bg-shape, .avatar, .bubble
+          position: absolute
+          z-index: 1
+        .bg-shape
+          top: -60px
+          left: -15px
+        .avatar
+          top: 15px
+          left: 23px
+        .bubble
+          top: 23px
+          left: 184px
+          width: 520px
+          .text-container
+            padding-bottom: 1.2rem
+      &.rtl
+        .description
+          .bg-shape, .avatar, .bubble
+            left: unset
+          .bg-shape
+            right: -15px
+          .avatar
+            right: 23px
+          .bubble
+            right: 184px
+    .video
+      display: flex
+      justify-content: center
+      align-items: center
+      padding: 1.5rem 0
+      .video-container
+        position: relative
+        .btn-play
+          position: absolute
+          top: calc(50% - 48px)
+          left: calc(50% - 48px)
+          width: 96px
+          height: 96px
+          text-align: center
+          line-height: 96px
+          background-color: #fff
+          border: $border_black
+          border-radius: 50%
+      &.rtl
+        .video-container .btn-play
+          transform: scaleX(-1)
+  .bottom
+    display: flex
+    .support, .avatars
+      display: flex
+      justify-content: center
+      align-items: center
+      width: 50%
+    .avatars
+      padding: 0.7rem 0
+      .avatars-container
+        display: flex
+        gap: 0.5rem
+        img
+          width: 72px
+
+
+
+.how-section
+  margin-bottom: 9.8rem
+  .section-title
+    margin-bottom: 3.1rem
+  .description
+    position: relative
+    .bg-shape, .avatar, .bubble
+      position: absolute
+    .bg-shape
+      top: -170px
+      right: -1px
+    .avatar
+      top: -170px
+      right: 43px
+      z-index: 1
+    .bubble
+      top: -108px
+      right: 216px
+      width: 483px
+      .text-container
+        padding: 0.7rem
+    &.rtl
+      .bg-shape, .avatar, .bubble
+        right: unset
+      .bg-shape, .avatar
+        transform: scaleX(-1)
+      .bg-shape
+        left: -1px
+      .avatar
+        left: 43px
+      .bubble
+        left: 216px
+  .cards
+    display: flex
+    margin-top: -1px
+    margin-left: -1px
+    .card
+      display: flex
+      flex-direction: column
+      width: 376px
+      min-width: 25%
+    .card-img
+      display: flex
+      justify-content: center
+      align-items: center
+      height: 250px
+      img
+        width: 186px
+    .card-text
+      display: flex
+      justify-content: center
+      align-items: center
+      flex: 1
+      text-align: center
+      padding: 1.4rem 1rem
+
+
+.reasons-section
+  margin-bottom: 6.8rem
+  .section-title
+    margin-bottom: 1.6rem
+  .wrapper
+    display: flex
+    .left-wrapper,
+    .right-wrapper
+      display: flex
+      width: 50%
+      height: max-content
+    .left-wrapper
+      padding-right: 2rem
+    .right-wrapper
+      padding-left: 1rem
+      .join-btn
+        margin-top: 1.5rem
+    &.rtl
+      .left-wrapper
+        padding-left: 2rem
+      .right-wrapper
+        padding-right: 1rem
+
+
+.events-section
+  margin-bottom: 5.9rem
+  .show-btn
+    display: flex
+    align-items: center
+    gap: 1rem
+    @include fontBtn
+    .btn-arrow
+      @include slide-button(15px, $color-black, $font-black, $blue_background, $color-black, $font_white)
+      &::after
+        transform: translateX(100%)
+      &:hover   
+        &::after
+          transform: translateX(0%)
+    &:hover
+      .btn-arrow
+        color: $font_white
+        &::after
+          transform: translateY(0%)
+    &.rtl
+      .btn-arrow
+        transform: rotate(180deg)
+  .events-container
+    display: flex
+    // justify-content: center
+    margin-top: 4.8rem
+    margin-bottom: 6.5rem
+    max-width: 100%
+    .event
+      padding: 0 1.2rem
+      padding-bottom: 1.2rem
+      border: $border_black
+      border-radius: 4px
+      background-color: $background_main
+      .options-menu
+        @include optionsBtn(30px, $color-black)
+      .img-container
+        width: 360px
+        height: 216px
+        border: 1px solid $color-black
+        margin-top: -3px
+        margin-bottom: 1.2rem
+      .event-title, .event-info
+        text-align: center
+      .event-info
+        @include fontSmall
+        line-height: 16px
+        margin-top: 0.3rem
+    .event-1
+      z-index: 1
+      transform: translateX(10px) rotate(4deg)
+    .event-2
+      z-index: 2
+      transform: translate(-79px, 40px) rotate(-18deg) 
+    .event-3
+      z-index: 3
+      transform: translate(-109px, 4px) rotate(12deg)
+    .event-4
+      z-index: 4
+      transform: translate(-128px, 25px) rotate(-12deg)
+    &.rtl
+      .event-1
+        transform: translate(5px, -1px) rotate(-4deg)
+      .event-2
+        transform: translate(93px, 40px) rotate(18deg) 
+      .event-3
+        transform: translate(123px, 3px) rotate(-12deg)
+      .event-4
+        transform: translate(143px, 24px) rotate(12deg)    
+  .bottom-btn
+    display: block
+    .show-btn
+      transform: rotate(90deg)
+      margin: 0 auto
+
+.donation-section
+  margin-bottom: 14rem
+  .section-title
+    margin-bottom: 3rem
+  .top
+    display: flex
+    align-items: center
+    justify-content: space-between
+    width: 100%
+    height: 48px
+    padding: 0.5rem 1.4rem
+    padding-right: 1.9rem
+    .content-title
+      letter-spacing: 0.5px
+  .center
+    display: flex
+    .payment-details,
+    .description
+      width: 50%
+    .payment-details
+      padding: 2.2rem
+      padding-left: 1.5rem
+      .form
+        display: flex
+        flex-direction: column
+        gap: 1.5rem
+    .description
+      position: relative
+      .bg-shape, .avatar, .bubble
+        position: absolute
+      .bg-shape
+        width: 263px
+        top: 59px
+        right: 5px
+      .avatar
+        top: 82px
+        right: 47px
+      .bubble
+        top: 23px
+        right: 210px
+        width: 69%
+      &.rtl
+        .bg-shape, .avatar, .bubble
+          right: unset
+        .bg-shape
+          left: 5px
+        .avatar
+          left: 47px
+          transform: scaleX(-1)
+        .bubble
+          left: 210px
+  .avatars
+    display: flex
+    justify-content: center
+    padding: 0.7rem
+    .avatars-container
+      display: flex
+      gap: 0.5rem
+  .bottom
+    display: flex
+    .transaction, .join
+      display: flex
+      justify-content: center
+      width: 50%
+      padding: 1.4rem
+
+.important-facts-section
+  margin-top: $section-gap
+  .facts-container
+    display: flex
+    justify-content: center
+    margin-top: 4.7rem
+    margin-bottom: 262px
+    .fact
+      position: relative
+      width: 376px
+      height: 376px
+      .fact-text,
+      .fact-number
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        display: flex
+        justify-content: center
+        align-items: center
+        border-radius: 50%
+      .fact-text        
+        padding: 24px
+        background-color: $blue_background
+        color: $font_white
+        text-align: center      
+      .fact-number
+        z-index: 1
+        background-color: $background_main
+        border: $border_black
+        font-size: 96px
+        font-weight: 500
+        transform: translateY(0%)
+        transition: transform 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+      &:hover .fact-number
+        transform: translateY(63%)
+
+
+
+//------------------------------------------------------
+
+.bubble
+  display: flex
+  height: max-content
+  .corner
+    width: 30px
+    height: 50px
+    overflow: hidden
+    position: relative
+    align-self: flex-end
+    border-bottom: 1px solid $color_black
+    &::before
+      content: ""
+      display: block
+      width: 200%
+      height: 200%
+      position: absolute
+      border: 1px solid $color_black
+      border-radius: 16px
+    &.left
+      margin-right: -1px
+      &:before
+        bottom: 0
+        right: 0
+        box-shadow: 15px 25px 0 0 $yellow_background
+    &.right
+      margin-left: -1px
+      &:before
+        bottom: 0
+        left: 0
+        box-shadow: -15px 25px 0 0 $yellow_background
+
+  .text-container
+    @include fontBubble
+    padding: 1rem
+    background-color: $yellow_background
+    border: 1px solid $color_black
+    border-radius: 12px
+    &.left
+      border-bottom-left-radius: 0
+    &.right
+      border-bottom-right-radius: 0
+
+    p
+      @include fontBubble
+    p:not(:last-child)
+      margin-bottom: 0.4rem
+
+
+.slide-btn-big
+  display: flex
+  align-items: center
+  gap: 1rem
+  border: $border_black
+  border-radius: 30px
+  @include fontBtn
+  padding: 0.2rem
+  padding-left: 1.5rem
+  padding-right: 3.6rem
+  position: relative
+  .button-text
+    line-height: 40px
+    z-index: 2
+    transition: color 0.2s ease
+  .circle
+    line-height: 40px
+    position: absolute
+    right: 0.2rem
+    width: 40px
+    color: $color_white
+    background-color: $blue_background
+    border-radius: 30px
+    z-index: 1
+    text-align: right
+    padding-right: 0.8rem
+    transition: all 0.4s cubic-bezier(.49,-0.24,.54,1.27)
+  &:hover
+    .button-text
+      color: $color_white
+    .circle
+      width: calc(100% - 0.4rem)
+  &.rtl
+    padding-left: 3.6rem
+    padding-right: 1.5rem
+    .circle
+      left: calc(0.2rem)
+      right: unset
+      text-align: left
+      padding-left: 0.8rem
+      .arrow
+        transform: rotate(180deg)
+
+.frame
+  margin-top: 1px
+  margin-left: 1px
+  position: relative
+  background-color: $background_main
+  outline: $border_black
+  border-radius: 10px
+  box-sizing: border-box
+  &::after
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    width: calc(100% + 1px)
+    height: calc(100% + 1px)
+    border-radius: 10px
+    box-shadow: -12px 12px 0 0 $blue_background
+    z-index: -1
+  &.rtl
+    &::after
+      box-shadow: 12px 12px 0 0 $blue_background
+
+.options-menu-big
+  display: block
+  position: relative
+  width: 60px
+  min-width: 60px
+  height: 12px
+  span
+    position: absolute
+    background-color: $color_black
+    border-radius: 50%
+    top: 0
+    left: 24px
+    width: 12px
+    height: 100%
+  &:before,
+  &:after
+    content: ''
+    background-color: $color_black
+    position: absolute
+    border-radius: 50%
+    width: 12px
+    height: 100%
+    top: 0
+  &:before
+    left: 0
+  &:after
+    right: 0
+
+.input-wrapper
+  position: relative
+  label
+    position: absolute
+    top: -6px
+    left: 12px
+    background-color: $background_main
+    padding: 0 5px
+    font-size: 12px
+    font-weight: 600
+    letter-spacing: 0.5px
+  .input
+    width: 100%
+    height: 48px
+    padding: 0 1rem
+    background-color: $background_main
+    outline: none
+    border: $border_black
+    border-radius: 4px
+    letter-spacing: 0.5px
+  .copy-button
+    position: absolute
+    font-size: 22px
+    top: 14px
+    right: 12px
+  &.rtl
+    label
+      left: unset
+      right: 12px
+    .copy-button
+      right: unset
+      left: 12px
+      
+
+
+
+
+
+
+
+
+
+
+      
+      
+

@@ -1,0 +1,114 @@
+@import ./variables
+@import ./reset
+@import ./header
+@import ./footer
+
+.container
+  // max-width: 1300px
+  margin: 0 auto
+  width: 100%
+  padding-left: 36px
+  padding-right: 60px
+
+.container-fluid
+  margin: 0 auto
+  width: 100%
+  padding: 0 48px
+
+.err-message
+  position: absolute
+  bottom: -22px
+  font-size: $fz_h5
+  line-height: 120%
+  color: red
+  align-self: start
+  &.active
+    display: block
+
+.section-title
+  width: 100%
+  display: flex
+  justify-content: space-between
+  align-items: center
+  border-bottom: 1px solid $color-black
+
+.img-container
+  position: relative
+  display: flex
+  align-items: center
+  justify-content: center
+  img
+    position: absolute
+    width: 100%
+    height: 100%
+    object-fit: cover
+    overflow: hidden
+
+h2
+  font-size: 57px
+  line-height: 62px
+  font-weight: 700
+
+h4
+  font-size: 16px
+  line-height: 24px
+  font-weight: 500
+
+.text-regular
+  font-size: 16px
+  font-weight: 500
+  line-height: 24px
+
+/* Large Devices */
+@media only screen and (max-width: 1400px)
+  .container
+    // max-width: 1200px
+/* Large Devices, Wide Screens */
+@media only screen and (max-width: 1200px)
+  .container
+    // max-width: 993px
+/* Medium Devices, Desktops */
+@media only screen and (max-width: 992px)
+  .container
+    // max-width: 789px
+/* A Small Devices, Tablets */
+@media only screen and (max-width: 768px)
+  html, body
+    overflow-x: hidden !important
+    max-width: 100vw
+    position: relative
+  .container
+    // max-width: 481px
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px)
+  .container
+    // max-width: calc(100% - 40px)
+/* Custom, iPhone Retina */
+@media only screen and (max-width: 320px)
+  .container
+    // max-width: 280px
+
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Maze&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap')
+
+main#notFound
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  height: 100vh
+  .code-error
+    font-family: 'Rubik Maze', cursive
+    font-weight: 500
+    font-size: 13rem
+    margin-bottom: 20px
+    text-align: center
+  .text-error
+    font-family: 'Concert One', cursive
+    font-size: 2rem
+    font-weight: 400
+    text-align: center
+
+
+
