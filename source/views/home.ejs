@@ -10,51 +10,53 @@
         <span class="btn-dots"></span>
       </button>
     </div>
-    <div class="center">
-      <div class="info frame <%= dir %>">
-        <div class="title">Будущее Хайфы</div>
-        <div class="description <%= dir %>">
-          <img class="bg-shape" src="/static/assets/images/bg-star.png" alt=""/>
-          <img class="avatar" src="/static/assets/images/avatar8.png" alt=""/>
-          <div class="bubble">
-            <div class="corner <%= dir === 'ltr' ? 'left' : 'right' %>" ></div> 
-            <div class="text-container <%= dir === 'ltr' ? 'left' : 'right' %>" >
-              <p>
-                Мы — некоммерческая организация "Молодежь для Хайфы", созданная волонтёрами для развития города и помощи людям.  
-              </p>
-              <p>
-                Наша цель - создать лучшие условия самореализации для молодёжи: от получения качественного образования до создания своего бизнеса.
-              </p>
-            </div>  
-          </div>     
-        </div>       
-      </div>
-      <div class="video frame <%= dir %>">
-        <div class="video-container">
-          <img src="/static/assets/images/video.png" alt=""/>
-          <button class="btn-play _icon-ico-video"></button>
+    <div class="content">
+      <div class="wrapper-left">
+        <div class="info frame <%= dir %>">
+          <div class="title">Будущее Хайфы</div>
+          <div class="description <%= dir %>">
+            <img class="bg-shape" src="/static/assets/images/bg-star.png" alt=""/>
+            <img class="avatar" src="/static/assets/images/avatar8.png" alt=""/>
+            <div class="bubble">
+              <div class="corner <%= dir === 'ltr' ? 'left' : 'right' %>" ></div> 
+              <div class="text-container <%= dir === 'ltr' ? 'left' : 'right' %>" >
+                <p>
+                  Мы — некоммерческая организация "Молодежь для Хайфы", созданная волонтёрами для развития города и помощи людям.  
+                </p>
+                <p>
+                  Наша цель - создать лучшие условия самореализации для молодёжи: от получения качественного образования до создания своего бизнеса.
+                </p>
+              </div>  
+            </div>     
+          </div>       
         </div>
+        <div class="support frame <%= dir %>">
+          <button class="slide-btn-big join-btn <%= dir %>">
+            <span class="button-text">Поддержать Хайфу</span>
+            <span class="circle" aria-hidden="true">
+              <span class="arrow _icon-ico-arrow-short"></span>
+            </span>
+          </button>
+        </div>        
       </div>
-    </div>
-    <div class="bottom">
-      <div class="support frame <%= dir %>">
-        <button class="slide-btn-big join-btn <%= dir %>">
-          <span class="button-text">Поддержать Хайфу</span>
-          <span class="circle" aria-hidden="true">
-            <span class="arrow _icon-ico-arrow-short"></span>
-          </span>
-        </button>
-      </div>
-      <div class="avatars frame <%= dir %>">
-        <div class="avatars-container">
-          <img src="/static/assets/images/avatar1.png" alt="" />
-          <img src="/static/assets/images/avatar2.png" alt="" />
-          <img src="/static/assets/images/avatar3.png" alt="" />
-          <img src="/static/assets/images/avatar4.png" alt="" />
-          <img src="/static/assets/images/avatar5.png" alt="" />
-          <img src="/static/assets/images/avatar6.png" alt="" />
-          <img src="/static/assets/images/avatar7.png" alt="" />
+      <div class="wrapper-right">
+        <div class="video frame <%= dir %>">
+          <div class="video-container img-container">
+            <img src="/static/assets/images/video.png" alt=""/>
+            <button class="btn-play _icon-ico-video"></button>
+          </div>
         </div>
+        <div class="avatars frame <%= dir %>">
+          <div class="avatars-container">
+            <img src="/static/assets/images/avatar1.png" alt="" />
+            <img src="/static/assets/images/avatar2.png" alt="" />
+            <img src="/static/assets/images/avatar3.png" alt="" />
+            <img src="/static/assets/images/avatar4.png" alt="" />
+            <img src="/static/assets/images/avatar5.png" alt="" />
+            <img src="/static/assets/images/avatar6.png" alt="" />
+            <img src="/static/assets/images/avatar7.png" alt="" />
+          </div>
+        </div>              
       </div>
     </div>
   </section>
@@ -132,7 +134,7 @@
         
       </div>
       <div class="right-wrapper">
-        <div>
+        <div class="text">
           <div class="bubble">
             <div class="text-container <%= dir === 'ltr' ? 'right' : 'left' %>" >
               <p>
@@ -154,7 +156,7 @@
   </section>
 
   <section class="events-section" dir=<%= dir %>>
-    <div class="section-title">
+    <div class="section-title <%= dir %>">
       <h2>События</h2>
       <a href="/events">
         <button class="show-btn <%= dir %>">
@@ -220,22 +222,30 @@
           <div class="input-wrapper <%= dir %>">
             <label for="bank-name">Название банка</label>
             <input class="input" id="bank-name" value="‏בנק הפועלים" readonly>
-            <button class="copy-button _icon-ico-copy"></button>
+            <button class="copy-button">
+              <span class=" _icon-ico-copy"></span>
+            </button>
           </div>
           <div class="input-wrapper <%= dir %>">
             <label for="bank-name">Swift код</label>
             <input class="input" id="bank-name" value="ALFARUMM" readonly>
-            <button class="copy-button _icon-ico-copy"></button>
+            <button class="copy-button">
+              <span class=" _icon-ico-copy"></span>
+            </button>
           </div>
           <div class="input-wrapper <%= dir %>">
             <label for="bank-name">IBAN</label>
             <input class="input" id="bank-name" value="0000000000828132111000333" readonly>
-            <button class="copy-button _icon-ico-copy"></button>
+            <button class="copy-button">
+              <span class=" _icon-ico-copy"></span>
+            </button>
           </div>
           <div class="input-wrapper <%= dir %>">
             <label for="bank-name">ФИО получателя</label>
             <input class="input" id="bank-name" value="Victor Coy" readonly>
-            <button class="copy-button _icon-ico-copy"></button>
+            <button class="copy-button">
+              <span class=" _icon-ico-copy"></span>
+            </button>
           </div>           
         </div>   
       </div>
@@ -286,7 +296,7 @@
     </div>
   </section>
 
-  <section class="important-facts-section">
+  <section class="important-facts-section" dir=<%= dir %>>
     <div class="section-title">
       <h2>Почему это важно?</h2>
     </div>

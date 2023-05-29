@@ -37,12 +37,82 @@
   display: flex
   align-items: center
   justify-content: center
+  overflow: hidden
   img
     position: absolute
     width: 100%
     height: 100%
     object-fit: cover
     overflow: hidden
+
+.frame
+  margin-top: 1px
+  margin-left: 1px
+  position: relative
+  background-color: $background_main
+  outline: $border_black
+  border-radius: 10px
+  box-sizing: border-box
+  &::after
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    width: calc(100% + 1px)
+    height: calc(100% + 1px)
+    border-radius: 10px
+    box-shadow: -12px 12px 0 0 $blue_background
+    z-index: -1
+  &.rtl
+    &::after
+      box-shadow: 12px 12px 0 0 $blue_background
+
+.bubble
+  display: flex
+  height: max-content
+  .corner
+    width: 30px
+    height: 50px
+    overflow: hidden
+    position: relative
+    align-self: flex-end
+    border-bottom: 1px solid $color_black
+    &::before
+      content: ""
+      display: block
+      width: 200%
+      height: 200%
+      position: absolute
+      border: 1px solid $color_black
+      border-radius: 16px
+    &.left
+      margin-right: -1px
+      &:before
+        bottom: 0
+        right: 0
+        box-shadow: 15px 25px 0 0 $yellow_background
+    &.right
+      margin-left: -1px
+      &:before
+        bottom: 0
+        left: 0
+        box-shadow: -15px 25px 0 0 $yellow_background
+
+  .text-container
+    @include fontBubble
+    padding: 1rem
+    background-color: $yellow_background
+    border: 1px solid $color_black
+    border-radius: 12px
+    &.left
+      border-bottom-left-radius: 0
+    &.right
+      border-bottom-right-radius: 0
+
+    p
+      @include fontBubble
+    p:not(:last-child)
+      margin-bottom: 0.4rem
 
 h2
   font-size: 57px
@@ -109,6 +179,31 @@ main#notFound
     font-size: 2rem
     font-weight: 400
     text-align: center
+
+@media only screen and (max-width: 1125px)
+  .container-fluid
+    padding: 0 30px
+  h2
+    font-size: 48px
+
+@media only screen and (max-width: 680px)
+  .container-fluid
+    padding: 0 16px
+  .frame
+    &::after
+      box-shadow: -8px 8px 0 0 $blue_background
+    &.rtl
+      &::after
+        box-shadow: 8px 8px 0 0 $blue_background
+
+@media only screen and (max-width: 550px)
+  .bubble .text-container
+    padding: 0.7rem
+
+@media only screen and (max-width: 630px)
+  h2
+    font-size: 32px
+    line-height: 42px
 
 
 
