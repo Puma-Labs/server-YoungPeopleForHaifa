@@ -82,9 +82,12 @@
   <section class="all-events-section" dir=<%= dir %>>
     <div class="section-title">
       <h2>Все мероприятия</h2>
+      <button class="calendar-btn">
+        <span class="_icon-ico-calendar" id="calendarToggle"></span>
+      </button>
     </div>
     <div class="wrapper">
-      <div class="calendar-container">
+      <div class="calendar-container" id="calendarMenu">
         <div class="top">
           <div class="title">
             Дата события
@@ -192,6 +195,16 @@
 <%- contentFor('scripts') %>
 
 <script>
+  const calendarToggle = document.getElementById("calendarToggle");
+  const calendarMenu = document.getElementById("calendarMenu");
+
+  calendarToggle.addEventListener("click", function (event) {
+    // event.preventDefault();
+
+    calendarToggle.classList.toggle("active");
+    calendarMenu.classList.toggle("active");
+  });
+
   const pageNumButtons = document.querySelectorAll('.page-num');
 
   pageNumButtons.forEach((button) => {
