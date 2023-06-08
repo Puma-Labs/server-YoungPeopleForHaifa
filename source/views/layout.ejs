@@ -1,0 +1,178 @@
+<%
+  const dir = "ltr"
+%>
+
+<!DOCTYPE html>
+<html lang="en" dir=<%= dir %>>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <link
+      href="/static/fonts/iconsfont/iconsfont.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link type="text/css" rel="stylesheet" href="/static/styles/main.css" />
+    <title><%= __CONFIG.site.name %></title>
+  </head>
+
+  <body>
+    <header class="container-fluid" dir=<%= dir %>>
+      <div class="background" id="menu-background"></div>
+      <div class="navbar-container <%= dir %>">
+        <nav>
+          <div class="menu-mobile">
+            <a href="/" class="logo">
+              <img src="/static/assets/images/logo.png" alt="logo" />
+              Young people for Haifa
+            </a>
+            <div class="button">
+              <div class="burger-btn" id="burgerToggle">
+                <span></span>
+              </div>             
+            </div>
+       
+          </div>
+          <ul class="navbar" id="navMenu">
+            <li>
+              <a href="/" class="nav-item logo" style="padding-left: 0">
+                <img src="/static/assets/images/logo.png" alt="logo" />
+                Young people for Haifa
+              </a>
+            </li>
+              <li class="large">
+                <div class="nav-item languages">
+                  <button>RUS</button>
+                  /
+                  <button>HEB</button>
+                </div>
+              </li>
+              <li>
+                <a href="" class="nav-item">
+                  Присоединиться
+                  <span class="arrow _icon-ico-arrow"></span>
+                </a>
+              </li>
+              <li>
+                <a href="/events" class="nav-item">
+                  События
+                  <span class="arrow _icon-ico-arrow"></span>
+                </a>
+              </li>
+              <li>
+                <a href="" class="nav-item">
+                  Пожертвования
+                  <span class="arrow _icon-ico-arrow"></span>
+                </a>
+              </li>
+          </ul>
+        </nav>
+        <div class="navbar-background"></div>
+      </div>
+    </header>
+
+    <%-body%>
+
+    <footer>
+      <div class="content <%= dir %>">
+        <div class="card">
+          <button class="options-menu _icon-ico-menu"></button>
+          <div class="wrapper">
+            <div class="banner">
+              <img src="/static/assets/images/logo-big.png" alt="logo" />
+            </div>
+            <div class="menu">
+              <ul>
+                <li>
+                  <a href="/" class="menu-item">
+                    Главная
+                    <div class="btn-arrow _icon-ico-arrow"></div>
+                  </a>
+                </li>
+                <li>
+                  <a href="/events" class="menu-item">
+                    События
+                    <div class="btn-arrow _icon-ico-arrow"></div>
+                  </a>
+                </li>
+                <li>
+                  <a href="/" class="menu-item disabled">
+                    Блог (скоро)
+                    <div class="btn-arrow _icon-ico-arrow"></div>
+                  </a>
+                </li>
+                <li>
+                  <a href="/" class="menu-item disabled">
+                    Магазин (скоро)
+                    <div class="btn-arrow _icon-ico-arrow"></div>
+                  </a>
+                </li>
+                <li>
+                  <a href="/" class="menu-item">
+                    Присоединиться
+                    <div class="btn-arrow _icon-ico-arrow"></div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+        <div class="bottom-menu">
+          <div class="menu">
+            <a href="/" class="menu-item">
+              Политика конфиденциальности
+              <span class="arrow _icon-ico-arrow"></span>
+            </a>
+            <a href="/" class="menu-item">
+              Обработка персональных данных
+              <span class="arrow _icon-ico-arrow"></span>
+            </a>
+            <a href="/" class="menu-item">
+              Coockie
+              <span class="arrow _icon-ico-arrow"></span>
+            </a>
+          </div>
+          <div class="social">
+            <a href="/" class="menu-item _icon-ico-youtube"></a>
+            <a href="/" class="menu-item _icon-ico-tiktok"></a>
+            <a href="/" class="menu-item _icon-ico-instagram"></a>
+            <a href="/" class="menu-item _icon-ico-facebook"></a>
+            <a href="/" class="menu-item _icon-ico-telegram"></a>
+            <a href="/" class="menu-item _icon-ico-whatsapp"></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/static/scripts/main.js"></script>
+    <script
+      defer
+      src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"
+    ></script>
+    <script
+      defer
+      src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"
+    ></script>
+
+    <%-scripts%>
+
+    <script>
+      const burgerToggle = document.getElementById("burgerToggle");
+      const navMenu = document.getElementById("navMenu");
+      const menuBackground = document.getElementById("menu-background");
+
+      burgerToggle.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        burgerToggle.classList.toggle("active");
+        navMenu.classList.toggle("active");
+        menuBackground.classList.toggle("active");
+        document.querySelector("body").classList.toggle("lock");
+      });
+    </script>
+  </body>
+</html>

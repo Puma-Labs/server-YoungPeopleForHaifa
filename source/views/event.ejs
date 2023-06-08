@@ -1,0 +1,96 @@
+<%
+  const dir = "ltr"
+%>
+
+<main>
+  <section class="event-section" dir=<%= dir %>>
+    <div class="top frame <%= dir %>">
+      <div class="content-title">Лекция. Закон и порядок</div>
+      <button class="options-menu-big">
+        <span class="btn-dots"></span>
+      </button>
+    </div>
+    <div class="content frame <%= dir %>">
+      <div class="content-card">
+        <div class="text-wrapper">
+          <div class="text-container">
+            <p>
+              Закон и порядок являются ключевыми аспектами израильской системы правосудия. Израиль, как демократическое государство, придерживается принципа, что все граждане равны перед законом и имеют право на справедливое судебное разбирательство.
+            </p>
+            <p>
+              В Израиле существует система трех ветвей власти - законодательной, исполнительной и судебной. Законодательная власть представлена Кнессетом - парламентом Израиля, который принимает законы и регулирует жизнь общества. Исполнительная власть возлагается на правительство, которое осуществляет полномочия в соответствии с законами, принятыми Кнессетом. Судебная власть независима и состоит из нескольких уровней, включая районные и окружные суды, Верховный суд Израиля и Судебный совет.
+            </p>
+            <p>
+              В Израиле существует также специальный суд - Военный суд, который занимается судебными делами, связанными с обороной и безопасностью государства.
+            </p>
+            <p>
+              Система правосудия Израиля работает на основе презумпции невиновности, что означает, что подсудимый считается невиновным до тех пор, пока его вина не будет доказана в суде. В Израиле существует также право на защиту, что означает, что каждый имеет право на помощь адвоката в случае судебного разбирательства.
+            </p>
+            <p>
+              Кроме того, Израиль имеет множество законов и политик, направленных на защиту прав человека и гражданских свобод. Это включает в себя Закон о равенстве возможностей, Закон о защите частной жизни, Закон о свободе печати и многие другие.
+              Наконец, в Израиле существует организация, которая занимается контролем за деятельностью правоохранительных органов - Генеральный инспектор полиции Израиля. Его задача - следить за тем, чтобы правоохранительные органы соблюдали законы и права граждан.
+            </p>
+            <p>
+              В целом, система закона и порядка в Израиле основана на принципах справедливости, равенства и защиты прав.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="datePlace-info">22.02.2023 - 10:00 - Хайфа, пл. городская. д. 3</div>
+  </section>
+
+  <section class="events-section" dir=<%= dir %>>
+    <div class="section-title">
+      <h2>Другие события</h2>
+      <a href="/events">
+        <button class="show-btn <%= dir %>">
+          <span>Показать все</span>
+          <div class="btn-arrow _icon-ico-arrow-short"></div>
+        </button>
+      </a>
+    </div>
+    <div class="events-container <%= dir %>">
+      <div class="event event-1">
+        <button class="options-menu _icon-ico-menu"></button>
+        <div class="img-container">
+          <img src="/static/assets/images/event1.png" alt=""/>
+        </div>
+        <h4 class="event-title">Волонтерство. Вербуем добрых людей</h4>
+        <div class="event-info">22.02.2023 - 10:00 - Хайфа, пл. городская. д. 3</div>
+      </div>
+      <div class="event event-2">
+        <button class="options-menu _icon-ico-menu"></button>
+        <div class="img-container">
+          <img src="/static/assets/images/event2.png" alt=""/>
+        </div>
+        <h4 class="event-title">Фитнес. Поддержка оздоровительного ц.</h4>
+        <div class="event-info">22.02.2023 - 10:00 - Хайфа, пл. городская. д. 3</div>
+      </div>
+      <div class="event event-3">
+        <button class="options-menu _icon-ico-menu"></button>
+        <div class="img-container">
+          <img src="/static/assets/images/event3.png" alt=""/>
+        </div>
+        <h4 class="event-title">Помощь жителям</h4>
+        <div class="event-info">22.02.2023 - 10:00 - Хайфа, пл. городская. д. 3</div>
+      </div>
+      <div class="event event-4">
+        <button class="options-menu _icon-ico-menu"></button>
+        <div class="img-container">
+          <img src="/static/assets/images/event4.png" alt=""/>
+        </div>
+        <h4 class="event-title">Волонтерская поддержка бездомным</h4>
+        <div class="event-info">22.02.2023 - 10:00 - Хайфа, пл. городская. д. 3</div>
+      </div>
+    </div>
+    <a href="/events" class="bottom-btn">
+      <button class="show-btn">
+        <div class="btn-arrow _icon-ico-arrow-short"></div>
+      </button>
+    </a>
+  </section>
+
+</main>
+
+<%- contentFor('scripts') %>

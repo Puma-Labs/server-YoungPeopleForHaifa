@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
+
+$color_blue: #4651C6
+$color_black: #1B1B1F
+$color_white: #ffffff
+$color_dark_grey: #46464f
+
+$background_main: #fffbff
+$background_white: #ffffff
+$dark_background: #01272B
+$blue_background: #4651C6
+$yellow_background: #FFCB40
+$grey_background: #EFEFEF
+$input_background: #EAECF4
+$green_background: #3BD2AE
+
+$button_orange_1: #F08652
+$button_orange_2: #D03425
+
+$button_green_1: #2AB5B2
+$button_green_2: #3BD2AE
+
+$green-line: #D4E6E3
+$grey-line: #5F5F5F
+$orange-line: #D03425
+$article-line: #D9D9D9
+
+$font_white: #FFFFFF
+$font_black: #1B1B1F
+$font_gray: #5F5F5F
+$font_green: #0E817E
+$font_orange: #F08652
+$font_disabled:#A8A6AA
+
+$fz_h1: 62px
+$fz_h2: 35px
+$fz_h3: 22px
+$fz_h4: 18px
+$fz_h5: 14px
+$fz_h6: 12px
+
+$border_black: 1px solid $color-black
+
+// fonts
+@mixin fontBubble
+  font-size: 14px
+  font-weight: 400
+  line-height: 20px
+
+@mixin fontBtn
+  font-size: 14px
+  font-weight: 600
+
+@mixin fontNav
+  font-size: 13.93px
+  font-weight: 500
+  text-transform: uppercase
+
+@mixin fontH1
+  font-weight: 600
+  font-size: 30px
+  line-height: 33px
+
+@mixin fontH2
+  font-weight: 500
+  font-size: 26px
+  line-height: 28.6px
+
+@mixin fontH3
+  font-weight: 500
+  font-size: 18px
+  line-height: 19.8px
+
+@mixin fontH4
+  font-weight: 500
+  font-size: 16px
+  line-height: 24px
+
+@mixin fontDesc
+  font-weight: 400
+  font-size: 16px
+  line-height: 16px
+
+@mixin fontSmall
+  font-weight: 400
+  font-size: 12px
+  letter-spacing: 0.4px
+
+@mixin fontMain
+  font-weight: 400
+  font-size: 14px
+  line-height: 18.2px
+
+@mixin fontButton
+  font-size: 12px
+  line-height: 12px
+
+@mixin fontLabel
+  font-size: 10px
+  line-height: 130%
+
+
+
+@mixin flexColumn
+  display: flex
+  flex-direction: column
+
+.f-column
+  @include flexColumn
+
+@mixin flexRow
+  display: flex
+  flex-direction: row
+
+.f-row
+  @include flexRow
+
+@mixin slide-btn-big()
+
+@mixin slide-button($font-size, $bd-color, $font-color, $hover-bg-color, $hover-border-color, $hover-font-color)
+  display: block
+  width: 40px
+  height: 40px
+  line-height: 40px
+  color: $font-color
+  font-size: $font-size
+  text-align: center
+  border: 1px solid $bd-color
+  border-radius: 50%
+  position: relative
+  overflow: hidden
+  z-index: 1
+  &::after
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    border-radius: 50%
+    transform: translateY(100%)
+    background-color: $hover-bg-color
+    transition: all 0.3s ease
+    z-index: -1
+  &:hover
+    color: $hover-font-color
+    border-color: $hover-border-color    
+    &::after
+      transform: translateY(0%)
+
+@mixin frame($width, $height)
+  width: calc($width - 12px) 
+  // height: calc($height - 12px)
+  height: $height
+  float: right
+  outline: 1px solid $color-black
+  background-color: $background_main
+  border-radius: 8px
+  position: relative
+  &::before
+    content: ''
+    position: absolute
+    top: 12px
+    left: -12px
+    width: 100%
+    height: 100%
+    background-color: $blue_background
+    border-radius: 8px
+    z-index: -1
+
+@mixin optionsBtn($size, $color)
+  font-size: $size
+  transform: rotate(90deg)
+  color: $color

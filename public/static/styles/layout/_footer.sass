@@ -1,0 +1,177 @@
+footer
+  width: 100%
+  padding: 48px
+  padding-bottom: 24px
+  background-color: $blue_background
+  .content
+    width: 100%
+    .card
+      padding: 0.9rem 1.5rem 2.8rem
+      border-radius: 10px
+      background-color: $background_main
+      .options-menu
+        @include optionsBtn(32px, $color-black)
+      .wrapper
+        display: flex
+        gap: 3rem
+        .banner
+          display: flex
+          align-items: center
+          justify-content: center
+          width: 100%
+          height: 348px
+          align-self: end
+          background-color: $blue_background
+          border: 1px solid $color-black
+          border-radius: 38px
+        .menu
+          width: 100%       
+          .menu-item
+            display: flex
+            flex-direction: row
+            align-items: center
+            justify-content: space-between
+            width: 100%
+            height: 72px
+            font-size: 32px
+            text-transform: uppercase
+            border-bottom: 1px solid $color-black
+            &:not(.disabled)
+              .btn-arrow
+                @include slide-button(15px, $color-black, $font-black, $blue_background, $color-black, $font_white)
+            &:hover
+              &:not(.disabled)
+                .btn-arrow
+                  color: $font_white
+                  &::after
+                    transform: translateY(0%)
+              
+            &.disabled
+              cursor: default
+              color: $font_disabled
+              .btn-arrow
+                width: 40px
+                height: 40px
+                text-align: center
+                line-height: 40px
+                font-size: 15px
+                border: 1px solid $font_disabled
+                border-radius: 50%             
+                
+    .bottom-menu
+      display: flex
+      width: 100%
+      justify-content: space-between
+      margin-top: 1.6rem
+      padding-left: 0.5rem
+      .menu, .social
+        display: flex
+      .menu
+        gap: 1.8rem
+        .menu-item
+          display: flex
+          gap: 1.1rem
+          align-items: center
+          color: $font_white
+          font-size: 14px
+          font-weight: 500
+          text-transform: uppercase
+          line-height: 15px
+          .arrow
+            transition: transform 0.3s ease
+            font-size: 15px
+          &:hover
+            .arrow
+              transform: rotate(45deg)
+      .social
+        gap: 0.5rem
+        .menu-item
+          @include slide-button(20px, $color-white, $font_white, $background_white, $color-black, $font-black)
+    &.rtl
+      .card .wrapper .menu .menu-item .btn-arrow
+        transform: scaleX(-1)
+      .bottom-menu .menu-item
+        .arrow
+          transform: rotate(-90deg)
+        &:hover
+          .arrow
+            transform: rotate(-135deg)
+
+@media only screen and (max-width: 1160px)
+  footer .content .bottom-menu .menu
+    gap: 1.5rem
+    .menu-item
+      gap: 0.8rem
+
+@media only screen and (max-width: 1125px)
+  footer
+    padding: 48px 30px
+
+@media only screen and (max-width: 1090px)
+  footer .content
+    .card .wrapper
+      .banner img
+        width: 68%
+      .menu .menu-item
+        font-size: 24px
+    .bottom-menu
+      .menu
+        flex-direction: column
+      .social
+        align-items: flex-end
+
+@media only screen and (max-width: 745px)
+  footer .content .card .wrapper
+    flex-direction: column
+    gap: 1rem
+    .banner img
+      width: 50%
+
+@media only screen and (max-width: 680px)
+  footer
+    padding: 48px 16px
+    padding-bottom: 30px
+    .content
+      .card
+        padding: 0 1rem
+        padding-bottom: 1.7rem
+        .wrapper
+          flex-direction: column
+          gap: 0.8rem
+          margin-top: -0.3rem
+          .banner
+            height: 250px
+            img
+              width: 300px
+          .menu .menu-item
+            // font-size: 24px
+            height: 71px
+            padding-left: 0.5rem
+            padding-right: 0.2rem
+      .bottom-menu
+        flex-direction: column
+        margin-top: 2rem
+        .menu
+          flex-direction: column
+          gap: 1.5rem
+          .menu-item
+            gap: 1.1rem
+        .social
+          justify-content: center
+          margin-top: 3.4rem
+          margin-left: -0.5rem
+
+@media only screen and (max-width: 412px)
+  footer .content .card .wrapper .banner
+    height: 200px
+    img
+      width: 68%
+
+@media only screen and (max-width: 380px)
+  footer .content .card .wrapper .menu .menu-item
+    font-size: 18px
+    height: 64px
+
+    
+
+

@@ -1,0 +1,175 @@
+@import '../layout/variables'
+
+.future-events-section,
+.all-events-section
+  margin-bottom: 9.4rem
+  .section-title
+    margin-bottom: 2.9rem
+    h2
+      line-height: 60px
+    .calendar-btn
+      // display: none
+      font-size: 20px
+      line-height: 20px
+      margin: 6px 13px 0 13px
+      cursor: pointer
+  .events-container
+    display: grid
+    grid-template-columns: repeat(auto-fill, minmax(358px, 1fr))
+    grid-gap: 24px
+    width: 100%
+    .event
+      padding: 0 1.2rem
+      padding-bottom: 1.2rem
+      border: $border_black
+      border-radius: 4px
+      background-color: $background_main
+      cursor: pointer
+      .options-menu
+        @include optionsBtn(30px, $color-black)
+      .img-container
+        width: 100%
+        height: 188px
+        border: 1px solid $color-black
+        margin-top: -3px
+        margin-bottom: 1.2rem
+        overflow: hidden
+        img
+          transition: transform .4s
+      .event-title, .event-info
+        text-align: center
+      .event-info
+        @include fontSmall
+        line-height: 16px
+        margin-top: 0.3rem  
+      &.event-1
+        background-color: $yellow_background
+      &:hover
+        .img-container
+          img
+            transform: scale(1.1)
+
+.all-events-section
+  margin-bottom: 16rem
+  .wrapper
+    display: flex
+    width: 100%
+    gap: 24px
+    .calendar-container
+      width: 358px
+      min-width: 358px
+      height: 222px
+      border: $border_black
+      border-radius: 8px
+      .top
+        display: flex
+        justify-content: space-between
+        align-items: center
+        border-bottom: $border_black
+        padding: 1rem
+        .title
+          font-size: 32px
+          font-weight: 400
+        .calendar-ico
+          font-size: 20px
+    .events
+      width: 100%
+      .pagination
+        display: flex
+        align-items: center
+        justify-content: center
+        gap: 3.3rem
+        margin-top: 3.2rem
+        .prev-btn,
+        .next-btn
+          .btn-arrow
+            @include slide-button(15px, $color-black, $font-black, $blue_background, $color-black, $font_white)
+            &::after
+              transform: translateX(100%)
+          &:hover
+            .btn-arrow
+              color: $font_white
+              &::after
+                transform: translateX(0%)
+          &.rtl
+            .btn-arrow
+              transform: scaleX(-1)
+        .prev-btn
+          transform: scaleX(-1)
+        .pages
+          display: flex
+          gap: 0.5rem
+          .page-num
+            width: 40px
+            height: 40px
+            line-height: 40px
+            text-align: center
+            border: 1px solid transparent
+            border-radius: 50%
+            &:hover
+              border: $border_black
+            &.active
+              color: $font_white
+              background-color: $blue_background
+              border-color: transparent
+          .dots
+            display: block
+            width: 40px
+            height: 40px
+            line-height: 40px
+            text-align: center
+            letter-spacing: 0.5px
+            cursor: default
+
+//-----------------------------------------------------------
+
+@media only screen and (max-width: 1055px)
+  .all-events-section
+    .section-title .calendar-btn
+      display: block
+    .wrapper
+      flex-direction: column
+      .calendar-container
+        display: none
+        &.active
+          display: block
+        .top .calendar-ico
+          display: none
+
+@media only screen and (max-width: 630px)
+  .future-events-section, .all-events-section
+    margin-bottom: 2.6rem
+    .section-title
+      margin-bottom: 2.1rem
+      h2
+        line-height: 48px
+    .events-container
+      display: flex
+      flex-direction: column
+      gap: 12px
+      .event
+        width: 100%
+        .img-container
+          height: 200px
+  .all-events-section
+    .section-title
+      margin-bottom: 1.5rem
+    .wrapper
+      flex-direction: column
+      align-items: center
+
+@media only screen and (max-width: 390px)
+  .all-events-section .wrapper .calendar-container
+    width: 100%
+    min-width: unset
+
+
+
+
+
+
+
+
+
+      
+

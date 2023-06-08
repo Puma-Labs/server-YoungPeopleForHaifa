@@ -1,0 +1,269 @@
+header
+  width: 100%
+  height: 84px
+  align-items: flex-end
+
+  .background
+    display: none
+    opacity: 0
+
+  .navbar-container
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+    min-width: 100%
+    max-width: 100%
+    height: 68px
+    margin-top: 16px
+    position: relative
+
+    nav
+      position: absolute
+      top: 8px
+      right: 0
+      width: 100%
+      height: calc(100% - 20px)
+      .menu-mobile
+        display: none
+      .navbar
+        display: flex
+        flex-direction: row        
+        width: 100%
+        height: 100%
+        .menu
+          display: flex
+        li
+          flex: 1
+          &.large
+            flex: 2
+        .nav-item
+          display: flex
+          flex-direction: row
+          align-items: center
+          justify-content: space-between
+          height: 100%
+          padding: 0 0.9rem 0 1.6rem
+          margin-left: -1px
+          line-height: 68px
+          background-color: $background_main
+          border: 1px solid $color_black
+          transition: transform 0.5s ease-in-out
+          @include fontNav
+          .arrow
+            transition: transform 0.5s ease-in-out
+            font-size: 15px
+          &:hover
+            transform: translate(8px, -8px)
+            .arrow
+              transform: rotate(45deg)
+          &.languages
+            justify-content: normal
+            gap: 0.5rem
+            color: $font_disabled
+            &:hover
+              transform: none
+        .logo
+          justify-content: normal
+          padding: 0 0.5rem
+
+    .navbar-background
+      width: 100%
+      height: calc(100% - 20px)
+      margin-left: -12px
+      background-color: $color_blue
+    
+    &.rtl
+      nav .navbar
+        .nav-item
+          padding: 0 1.6rem 0 0.9rem
+          .arrow
+            transform: rotate(-90deg)
+          &:hover
+            transform: translate(-8px, -8px)
+            .arrow
+              transform: rotate(-135deg)
+          &.logo
+            padding-right: 0
+      .navbar-background
+        margin-left: unset
+        transform: translateX(12px)
+        z-index: -1
+
+@media only screen and (max-width: 1545px)
+  header .navbar-container nav .navbar li.large
+    flex: 1.5
+
+@media only screen and (max-width: 1435px)
+  header
+    padding: 0 35px 0 27px
+
+@media only screen and (max-width: 1412px)
+  header .navbar-container nav .navbar li.large
+    flex: 1.4
+
+@media only screen and (max-width: 1390px)
+  header .navbar-container nav .navbar li.large
+    flex: 1.2
+
+@media only screen and (max-width: 1345px)
+  header .navbar-container nav .navbar li.large
+    flex: 1.1
+
+@media only screen and (max-width: 1310px)
+  header .navbar-container nav .navbar li.large
+    flex: 1
+
+@media only screen and (max-width: 1290px)
+  header .navbar-container nav .navbar li.large
+    flex: 0.6
+
+@media only screen and (max-width: 1194px)
+  header .navbar-container nav .navbar .nav-item
+    padding: 0 0.9rem
+    &.logo
+      padding: 0
+
+@media only screen and (max-width: 1190px)
+  body
+    &.lock
+      overflow-y: hidden
+  header
+    position: fixed
+    z-index: 100
+    &::before
+      position: absolute
+      top: 0
+      left: 0
+      content: ''
+      width: 100%
+      height: 100%
+      background-color: $background_main
+    .background.active
+      display: block
+      width: 100vw
+      height: 100vh
+      position: absolute
+      top: 0
+      left: 0
+      background-color: #000
+      opacity: 0.35
+      animation: showBackground 0.3s ease
+    .navbar-container
+      margin-top: 3px
+      nav
+        background-color: $background_main
+        .menu-mobile
+          display: flex
+          justify-content: space-between
+          width: 100%
+          height: 48px
+          background-color: $background_main
+          border: $border-black
+      
+          .logo
+            display: flex
+            align-items: center
+            @include fontNav
+            width: 100%
+            background-color: $background_main
+            padding-right: 5px
+            z-index: 101
+            outline: $border_black
+          .button
+            outline: $border_black
+            margin-left: 1px
+            z-index: 101
+          .burger-btn
+            display: block
+            position: relative
+            width: 20px
+            height: 12px
+            margin: 18px 14px
+            cursor: pointer
+            span
+              position: absolute
+              background-color: $color_black
+              left: 0
+              width: 100%
+              height: 2px
+              top: 5px
+              transition: all 1s ease 0s
+            &:before,
+            &:after
+              content: ''
+              background-color: $color_black
+              position: absolute
+              width: 100%
+              height: 2px
+              left: 0
+              transition: all .3s ease 0s
+            &:before
+              top: 0
+            &:after
+              bottom: 0
+            &.active
+              &:before
+                transform: rotate(45deg)
+                top: 5px
+              &:after
+                transform: rotate(-45deg)
+                bottom: 5px
+              span
+                transform: scale(0) 
+
+        .navbar
+          opacity: 0
+          flex-direction: column
+          position: relative
+          height: max-content
+          box-shadow: -12px 12px 0 0 $blue_background
+          top: -100%
+          transition: all 0.3s ease-in-out
+          .nav-item
+            border-top: none
+            margin-left: 0
+            line-height: 20px
+            padding: 3.2rem 0.9rem 1rem 0.9rem
+            &.logo
+              display: none
+            &:hover
+              transform: none
+          &.active
+            opacity: 1
+            top: 0
+
+      &.rtl
+        nav     
+          .menu-mobile
+            .logo
+              border-right: none
+              border-left: $border_black
+            .button
+              background-color: $background_main
+              margin-left: 0
+          .navbar
+            box-shadow: 12px 12px 0 0 $blue_background
+            z-index: 99
+            .nav-item
+              padding: 3.2rem 0.9rem 1rem 0.9rem
+              &:hover
+                transform: none
+        .navbar-background
+          z-index: 0
+
+  @keyframes showBackground
+    from
+      opacity: 0
+    to
+      opacity: 0.35
+
+@media only screen and (max-width: 680px)
+  header .navbar-container
+    nav .navbar
+      box-shadow: -8px 8px 0 0 $blue_background
+    .navbar-background
+      margin-left: -8px
+      margin-bottom: 2px
+    &.rtl
+      .navbar-background
+        transform: translateX(8px)

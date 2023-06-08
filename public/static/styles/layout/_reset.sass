@@ -1,0 +1,81 @@
+// @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap")
+// @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&display=swap")
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap')
+
+*, *::before, *::after
+  box-sizing: border-box
+
+ul[class], ol[class]
+  padding: 0
+
+body
+  scroll-behavior: smooth
+  text-rendering: optimizeSpeed
+  line-height: 1.5
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  align-items: center
+  font-family: "Rubik", sans-serif
+  background-color: $background_main
+  color: $font_black
+
+main
+  // background-color: #f6e7e7
+  min-height: calc(100vh - 232px)
+  width: 100%
+  // padding-top: calc(84px + 36px)
+  padding-top: 36px
+  // padding-left: 36px
+  padding-left: 48px
+  padding-right: 48px
+
+*, body, h1, h2, h3, h4,
+p, ul[class], ol[class],
+li, ul, figure, figcaption,
+blockquote, dl, dd, span
+  margin: 0
+  font-style: normal
+  line-height: 100%
+  list-style: none
+  padding: 0
+
+ul[class], ol[class]
+  list-style: none
+
+a
+  text-decoration: none
+  color: $font_black
+
+img
+  max-width: 100%
+  display: block
+
+input, button, textarea, select
+  font: inherit
+
+button
+  background-color: unset
+  border: none
+  cursor: pointer
+
+@media (prefers-reduced-motion: reduce)
+  *
+    animation-duration: 0.01ms
+    animation-iteration-count: 1
+    transition-duration: 0.01ms
+    scroll-behavior: auto
+
+@media only screen and (max-width: 1190px)
+  main
+    padding-top: 91px
+
+@media only screen and (max-width: 1125px)
+  main
+    padding-left: 30px
+    padding-right: 30px
+
+@media only screen and (max-width: 680px)
+  main
+    padding-left: 16px
+    padding-right: 16px
