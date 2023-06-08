@@ -1,5 +1,5 @@
 const ApiError = require('../exceptions/api-error')
-const tokenService = require('../service/token-service')
+const tokenService = require('../../source/service/token-service')
 module.exports = function (req, res, next) {
     try {
         const authHeader = req.headers.authorization
