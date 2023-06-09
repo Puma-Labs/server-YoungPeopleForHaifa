@@ -18,13 +18,13 @@ class EventController {
     async update(req, res) {
         const dataUpdate = req.body
 
-        if(dataUpdate.icon.includes("base64")) {
-            const iconData = dataUpdate.icon
-            const type = iconData.substring("data:image/".length, iconData.indexOf(";base64")).slice(0, 3);
+        if(dataUpdate.cover && dataUpdate.cover.includes("base64")) {
+            const coverData = dataUpdate.cover
+            const type = coverData.substring("data:image/".length, coverData.indexOf(";base64")).slice(0, 3);
             const path = `/icon/events/`
             const fileName = `${__translit(dataUpdate.title.slice(0, 20))}-${__randomString(10)}.${type}`
             
-            dataUpdate.icon = __imageSave(path, fileName, iconData)
+            dataUpdate.cover = __imageSave(path, fileName, coverData)
         }
 
         const newEvent = await EventService.update(dataUpdate)
