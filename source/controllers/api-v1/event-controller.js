@@ -4,6 +4,7 @@ const EventService = require('../../service/event-service')
 
 class EventController {
     async getters(req, res) {
+
         const eventsList = await EventService.getList()
         res.json(eventsList)
     }
@@ -33,12 +34,14 @@ class EventController {
     async create(req, res) {
         const dataCreate = req.body
 
-        const iconData = dataCreate.icon
-        const type = iconData.substring("data:image/".length, iconData.indexOf(";base64")).slice(0, 3);
-        const path = `/icon/events/`
-        const fileName = `${__translit(dataCreate.title.slice(0, 20))}-${__randomString(10)}.${type}`
-
-        dataCreate.icon = __imageSave(path, fileName, iconData)
+        if (dataCreate.cover) {
+          const coverData = dataCreate.cover
+          const type = coverData.substring("data:image/".length, coverData.indexOf(";base64")).slice(0, 3);
+          const path = `/images/events/`
+          const fileName = `${__translit(dataCreate.title.slice(0, 20))}-${__randomString(10)}.${type}`
+  
+          dataCreate.cover = __imageSave(path, fileName, coverData)
+        }
 
         const newEvent = await EventService.create(dataCreate)
         res.json(newEvent)

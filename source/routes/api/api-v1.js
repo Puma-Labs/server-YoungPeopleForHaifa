@@ -1,10 +1,13 @@
-'use strict'
+"use strict";
 
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
-router.use('/user', require('./section/admin'));
+const __middlewareAdmin = require("../../../core/middlewares/admin-middleware");
 
-router.get('/*', __asyncHandler(__APIE.notFount));
+router.use("/user", require("./section/admin"));
+router.use("/events", __middlewareAdmin, require("./section/events"));
+
+router.get("/*", __asyncHandler(__APIE.notFound));
 
 module.exports = router;
