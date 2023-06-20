@@ -7,6 +7,7 @@ const EventModel = new Schema({
     time: {type: Date, require: true},
     cover: {type: String},
     text: {type: String, require: true},
+    status: {type: String},
 }, { timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' }})
 
 module.exports = model('Event', EventModel);
