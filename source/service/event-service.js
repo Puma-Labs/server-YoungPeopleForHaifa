@@ -2,7 +2,7 @@ const EventModel = require('../models/event-model');
 
 class EventService {
   async getList() {
-    const res = await EventModel.find().sort('date');
+    const res = await EventModel.find().sort({ date: -1 });
     return res
   }
 
