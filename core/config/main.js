@@ -23,6 +23,7 @@ module.exports = {
         white_list: [
             'http://localhost:3000',
             'http://localhost:5007',
+            'https://young4haifa.co.il',
         ],
     },
 
@@ -50,6 +51,7 @@ module.exports = {
         white_list: [
             'http://localhost:3000',
             'http://localhost:5007',
+            'https://young4haifa.co.il',
         ],
     }
 };

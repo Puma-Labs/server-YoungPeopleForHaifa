@@ -5,7 +5,7 @@ const path = require('path');
 const expressLayouts = require('express-ejs-layouts')
 
 module.exports = (server) => {
-    server.use(express.json({limit: '10mb'}));
+    server.use(express.json({limit: '50mb'}));
     server.set('views', path.join(__dirname, '../source/views'))
     server.set('view engine', 'ejs')
     server.use(express.static('public', {
