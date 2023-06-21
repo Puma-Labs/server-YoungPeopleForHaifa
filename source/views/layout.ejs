@@ -1,9 +1,9 @@
 <%
-  const dir = "ltr"
+  const dir = lang === "he" ? "rtl" : "ltr"
 %>
 
 <!DOCTYPE html>
-<html lang="en" dir=<%= dir %>>
+<html lang=<%= lang %> dir=<%= dir %>>
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -33,9 +33,9 @@
             <div class="button">
               <div class="burger-btn" id="burgerToggle">
                 <span></span>
-              </div>             
+              </div>
             </div>
-       
+
           </div>
           <ul class="navbar" id="navMenu">
             <li>
@@ -46,9 +46,9 @@
             </li>
               <li class="large">
                 <div class="nav-item languages">
-                  <button class="<%= (dir === 'ltr') ? 'btn-selected' : '' %>">RUS</button>
+                  <button onclick="setLang('ru')" class="<%= (dir === 'ltr') ? 'btn-selected' : '' %>">RUS</button>
                   /
-                  <button class="<%= (dir === 'rtl') ? 'btn-selected' : '' %>">HEB</button>
+                  <button onclick="setLang('he')" class="<%= (dir === 'rtl') ? 'btn-selected' : '' %>">HEB</button>
                 </div>
               </li>
               <li>
@@ -160,6 +160,13 @@
     ></script>
 
     <%-scripts%>
+
+    <script>
+      function setLang(lang) {
+        document.cookie = `lang=${lang}`;
+        location.reload();
+      }
+    </script>
 
     <script>
       const burgerToggle = document.getElementById("burgerToggle");

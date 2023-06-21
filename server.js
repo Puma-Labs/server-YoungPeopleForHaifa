@@ -5,6 +5,7 @@ require('dotenv').config({path: './.env'});
 const cookieParser  = require('cookie-parser')
 const bodyParser    = require('body-parser')
 const express       = require('express')
+const i18n= require('./core/i18n')
 const database      = require('./core/database')
 const server        = express()
 

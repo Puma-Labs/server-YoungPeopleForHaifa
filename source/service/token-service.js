@@ -1,6 +1,5 @@
 const jwt = require('jsonwebtoken')
 const tokenModel = require('../models/token-model')
-const adminFB = require('../../core/middlewares/config/firebase-config')
 
 class TokenService {
     generateToken(payload) {
@@ -15,15 +14,6 @@ class TokenService {
     validateAccessToken(token) {
         try {
             const userData = jwt.verify(token, __CONFIG.jwt_token.access)
-            return userData
-        } catch (e) {
-            return null
-        }
-    }
-
-    async validateFirebaseToken(token) {
-        try {
-            const userData = await adminFB.auth().verifyIdToken(token)
             return userData
         } catch (e) {
             return null

@@ -214,6 +214,9 @@ header .navbar-container.rtl nav .navbar .nav-item:hover .arrow {
 header .navbar-container.rtl nav .navbar .nav-item.logo {
   padding-right: 0;
 }
+header .navbar-container.rtl nav .navbar .languages:hover {
+  transform: none;
+}
 header .navbar-container.rtl .navbar-background {
   margin-left: unset;
   transform: translateX(12px);

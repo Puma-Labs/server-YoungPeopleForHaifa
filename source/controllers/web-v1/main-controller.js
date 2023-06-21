@@ -2,15 +2,18 @@ const moment = require("moment");
 const EventService = require("../../service/event-service");
 
 class MainController {
+
   async home(req, res) {
     const eventsList = await EventService.getList();
     const upcomingEvents = MainController.getUpcomingEvents(eventsList, 4);
+    const lang = MainController.setLanguageCookie(req, res);
 
     res.render("home", {
       layout: "layout",
       title: "",
       page: "home",
       upcomingEvents,
+      lang,
       moment,
     });
   }
@@ -27,6 +30,7 @@ class MainController {
 
     const eventsList = await EventService.getList();
     const upcomingEvents = MainController.getUpcomingEvents(eventsList, 8);
+    const lang = MainController.setLanguageCookie(req, res);
 
     res.render("events", {
       layout: "layout",
@@ -34,6 +38,7 @@ class MainController {
       page: "events",
       data: eventsList,
       upcomingEvents,
+      lang,
       moment,
     });
   }
@@ -42,7 +47,11 @@ class MainController {
     const { id } = req.params;
     const event = await EventService.getOne(id);
     const eventsList = await EventService.getList();
-    const upcomingEvents = MainController.getUpcomingEvents(eventsList.filter(e => e.id !== id), 4);
+    const upcomingEvents = MainController.getUpcomingEvents(
+      eventsList.filter((e) => e.id !== id),
+      4
+    );
+    const lang = MainController.setLanguageCookie(req, res);
 
     res.render("event", {
       layout: "layout",
@@ -50,8 +59,21 @@ class MainController {
       page: "event",
       data: event,
       upcomingEvents,
+      lang,
       moment,
     });
+  }
+
+  static setLanguageCookie(req, res) {
+    let lang = req.cookies["lang"];
+    if (typeof lang === "undefined") {
+      res.cookie("lang", "ru", {
+        maxAge: 30 * 24 * 60 * 60 * 1000,
+        httpOnly: false,
+      });
+      lang = "ru";
+    }
+    return lang;
   }
 
   static getUpcomingEvents(eventsList, limit) {

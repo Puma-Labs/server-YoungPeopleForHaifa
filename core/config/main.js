@@ -1,3 +1,4 @@
+const path = require('path');
 module.exports = {
     production: {
         country: {
@@ -25,6 +26,14 @@ module.exports = {
             'http://localhost:5007',
             'https://young4haifa.co.il',
         ],
+        translate: {
+            locales: ['ru', 'he'],
+            directory: path.join(__dirname, 'locales'),
+            defaultLocale: 'ru',
+            retryInDefaultLocale: false,
+            cookie: 'lang',
+            autoReload: true,
+        }
     },
 
     development: {
@@ -53,24 +62,13 @@ module.exports = {
             'http://localhost:5007',
             'https://young4haifa.co.il',
         ],
-    }
-};
-
-
-/*
-    sudo certbot --nginx -d mir-mebeli37.ru -d www.mir-mebeli37.ru
-
-    server {
-        listen 80;
-        listen [::]:80;
-
-        root /var/www/mir-mebeli37/html;
-
-        server_name mir-mebeli37.ru www.mir-mebeli37.ru;
-
-        location / {
-                proxy_pass http://localhost:5000
-                try_files $uri $uri/ =404;
+        translate: {
+            locales: ['ru', 'he'],
+            directory: path.join(__dirname, 'locales'),
+            defaultLocale: 'ru',
+            retryInDefaultLocale: false,
+            cookie: 'lang',
+            autoReload: true,
         }
     }
-*/
+};
