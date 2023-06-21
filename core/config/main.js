@@ -24,6 +24,7 @@ module.exports = {
         white_list: [
             'http://localhost:3000',
             'http://localhost:5007',
+            'https://young4haifa.co.il',
         ],
         translate: {
             locales: ['ru', 'he'],
@@ -59,6 +60,7 @@ module.exports = {
         white_list: [
             'http://localhost:3000',
             'http://localhost:5007',
+            'https://young4haifa.co.il',
         ],
         translate: {
             locales: ['ru', 'he'],
