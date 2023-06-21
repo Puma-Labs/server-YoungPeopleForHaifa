@@ -1,5 +1,5 @@
 const ApiError = require('../exceptions/api-error')
-const tokenService = require('../../service/token-service')
+const tokenService = require('../../source/service/token-service')
 
 module.exports = async function (req, res, next) {
     try {
@@ -10,7 +10,7 @@ module.exports = async function (req, res, next) {
                 Location: `/sign-in`
             }).end()
         }
-        const userData = await tokenService.validateFirebaseToken(token)
+        const userData = await tokenService.validateRefreshToken(token)
         if (!userData) {
             console.log(2)
             res.writeHead(301, {
