@@ -831,6 +831,30 @@ footer .content.rtl .bottom-menu .menu-item:hover .arrow {
   margin-bottom: 0.4rem;
 }
 
+.input-wrapper {
+  position: relative;
+}
+.input-wrapper label {
+  position: absolute;
+  top: -6px;
+  left: 12px;
+  background-color: #fffbff;
+  padding: 0 5px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.input-wrapper .input {
+  width: 100%;
+  height: 48px;
+  padding: 0 1rem;
+  background-color: #fffbff;
+  outline: none;
+  border: 1px solid #1B1B1F;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
 h2 {
   font-size: 57px;
   line-height: 62px;
@@ -1507,16 +1531,6 @@ main#notFound .text-error {
   font-weight: 600;
   letter-spacing: 0.5px;
 }
-.input-wrapper .input {
-  width: 100%;
-  height: 48px;
-  padding: 0 1rem;
-  background-color: #fffbff;
-  outline: none;
-  border: 1px solid #1B1B1F;
-  border-radius: 4px;
-  letter-spacing: 0.5px;
-}
 .input-wrapper .copy-button {
   position: absolute;
   height: 46px;
@@ -1888,7 +1902,7 @@ main#notFound .text-error {
     height: 200px;
   }
 }
-@media only screen and (max-width: 1260px) {
+@media only screen and (max-width: 1490px) {
   .events-section .events-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
@@ -2028,7 +2042,7 @@ main#notFound .text-error {
     width: 92%;
   }
 }
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1600px) {
   .important-facts-section .facts-container .fact {
     width: 25%;
     height: unset;
@@ -2168,9 +2182,16 @@ main#notFound .text-error {
 .all-events-section .events-container .event:hover .img-container img {
   transform: scale(1.1);
 }
+.future-events-section .events-container .event:hover .img-container.empty img,
+.all-events-section .events-container .event:hover .img-container.empty img {
+  transform: none;
+}
 
 .all-events-section {
   margin-bottom: 16rem;
+}
+.all-events-section .section-title #calendarToggle {
+  display: none;
 }
 .all-events-section .wrapper {
   display: flex;
@@ -2180,7 +2201,8 @@ main#notFound .text-error {
 .all-events-section .wrapper .calendar-container {
   width: 358px;
   min-width: 358px;
-  height: 222px;
+  height: -moz-fit-content;
+  height: fit-content;
   border: 1px solid #1B1B1F;
   border-radius: 8px;
 }
@@ -2197,6 +2219,30 @@ main#notFound .text-error {
 }
 .all-events-section .wrapper .calendar-container .top .calendar-ico {
   font-size: 20px;
+}
+.all-events-section .wrapper .calendar-container .calendar {
+  padding: 1rem;
+}
+.all-events-section .wrapper .calendar-container .calendar .input {
+  height: 56px;
+}
+.all-events-section .wrapper .calendar-container .calendar .qs-datepicker-container {
+  position: unset;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  margin: 1rem auto;
+}
+.all-events-section .wrapper .calendar-container .calendar .buttons {
+  display: flex;
+  width: 100%;
+  justify-content: end;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.all-events-section .wrapper .calendar-container .calendar .buttons button {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
 }
 .all-events-section .wrapper .events {
   width: 100%;

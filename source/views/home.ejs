@@ -1,5 +1,6 @@
 <%
   const dir = "ltr"
+  const emptyCover = "/static/assets/images/preview-empty.png"
 %>
 
 <main>
@@ -166,38 +167,20 @@
       </a>
     </div>
     <div class="events-container <%= dir %>">
-      <div class="event event-1">
-        <button class="options-menu _icon-ico-menu"></button>
-        <div class="img-container">
-          <img src="/static/assets/images/event1.png" alt=""/>
-        </div>
-        <h4 class="event-title">Волонтерство. Вербуем добрых людей</h4>
-        <div class="event-info">22.02.2023 - 10:00 - Хайфа, пл. городская. д. 3</div>
-      </div>
-      <div class="event event-2">
-        <button class="options-menu _icon-ico-menu"></button>
-        <div class="img-container">
-          <img src="/static/assets/images/event2.png" alt=""/>
-        </div>
-        <h4 class="event-title">Фитнес. Поддержка оздоровительного ц.</h4>
-        <div class="event-info">22.02.2023 - 10:00 - Хайфа, пл. городская. д. 3</div>
-      </div>
-      <div class="event event-3">
-        <button class="options-menu _icon-ico-menu"></button>
-        <div class="img-container">
-          <img src="/static/assets/images/event3.png" alt=""/>
-        </div>
-        <h4 class="event-title">Помощь жителям</h4>
-        <div class="event-info">22.02.2023 - 10:00 - Хайфа, пл. городская. д. 3</div>
-      </div>
-      <div class="event event-4">
-        <button class="options-menu _icon-ico-menu"></button>
-        <div class="img-container">
-          <img src="/static/assets/images/event4.png" alt=""/>
-        </div>
-        <h4 class="event-title">Волонтерская поддержка бездомным</h4>
-        <div class="event-info">22.02.2023 - 10:00 - Хайфа, пл. городская. д. 3</div>
-      </div>
+      <% upcomingEvents.map((event, i) => { %>
+        <a href="/events/<%= event.id %>">
+          <div class="event <%= `event-${i + 1}` %>">
+            <button class="options-menu _icon-ico-menu"></button>
+            <div class="img-container <%= (!event.cover) ? 'empty' : '' %>">
+              <img src=<%= event.cover || emptyCover %> alt=""/>
+            </div>
+            <h4 class="event-title"><%= event.title %></h4>
+            <div class="event-info">
+              <%= moment(event.date).format("DD.MM.YYYY") %> - <%= moment(event.time).format("hh:mm") %> - <%= event.place %>
+            </div>
+          </div>
+        </a>
+      <% }) %>
     </div>
     <a href="/events" class="bottom-btn">
       <button class="show-btn">
