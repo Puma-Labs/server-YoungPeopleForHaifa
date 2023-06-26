@@ -60,8 +60,13 @@ header
             justify-content: normal
             gap: 0.5rem
             color: $font_disabled
+            .btn-selected
+              color: $font_disabled
+              cursor: default
             &:hover
               transform: none
+            button:not(.btn-selected):hover
+              color: #4651c7
         .logo
           justify-content: normal
           padding: 0 0.5rem

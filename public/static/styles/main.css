@@ -179,8 +179,15 @@ header .navbar-container nav .navbar .nav-item.languages {
   gap: 0.5rem;
   color: #A8A6AA;
 }
+header .navbar-container nav .navbar .nav-item.languages .btn-selected {
+  color: #A8A6AA;
+  cursor: default;
+}
 header .navbar-container nav .navbar .nav-item.languages:hover {
   transform: none;
+}
+header .navbar-container nav .navbar .nav-item.languages button:not(.btn-selected):hover {
+  color: #4651c7;
 }
 header .navbar-container nav .navbar .logo {
   justify-content: normal;
