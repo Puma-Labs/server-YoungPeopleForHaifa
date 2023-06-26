@@ -85,6 +85,28 @@
           box-shadow: none
           -webkit-box-shadow: none
           margin: 1rem auto
+          width: 100%
+          .qs-squares
+            justify-content: center
+            gap: 0.2rem
+            padding: 0.8rem 0
+            .qs-square
+              width: 40px
+              height: 40px
+              font-size: 16px
+              color: #000
+              font-weight: normal
+              border-radius: 50%
+            .qs-square.qs-num
+              &:hover
+                border: 1px solid #4650c6
+                background-color: inherit
+              &.qs-current
+                text-decoration: none
+                font-weight: 600
+              &.qs-active
+                background-color: #4650c6
+                color: #fff
         .buttons
           display: flex
           width: 100%
