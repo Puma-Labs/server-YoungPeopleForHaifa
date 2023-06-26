@@ -11,6 +11,11 @@ class EventService {
     return res
 }
 
+async getListByDate(date) {
+  const res = await EventModel.find({ date: date });
+  return res
+}
+
   async create(newEvent) {
       const res = await EventModel.create(newEvent)
       return res
