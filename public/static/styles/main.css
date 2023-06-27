@@ -369,13 +369,13 @@ header .navbar-container.rtl .navbar-background {
     transform: scale(0);
   }
   header .navbar-container nav .navbar {
+    transform: translateY(-100%);
     opacity: 0;
     flex-direction: column;
     position: relative;
     height: -moz-max-content;
     height: max-content;
     box-shadow: -12px 12px 0 0 #4651C6;
-    top: -100%;
     transition: all 0.3s ease-in-out;
   }
   header .navbar-container nav .navbar .nav-item {
@@ -391,8 +391,8 @@ header .navbar-container.rtl .navbar-background {
     transform: none;
   }
   header .navbar-container nav .navbar.active {
+    transform: translateY(0%);
     opacity: 1;
-    top: 0;
   }
   header .navbar-container.rtl nav .menu-mobile .logo {
     border-right: none;
@@ -2256,6 +2256,9 @@ main#notFound .text-error {
   font-weight: normal;
   border-radius: 50%;
 }
+.all-events-section .wrapper .calendar-container .calendar .qs-datepicker-container .qs-squares .qs-square.qs-num {
+  font-size: unset;
+}
 .all-events-section .wrapper .calendar-container .calendar .qs-datepicker-container .qs-squares .qs-square.qs-num:hover {
   border: 1px solid #4650c6;
   background-color: inherit;
@@ -2267,6 +2270,9 @@ main#notFound .text-error {
 .all-events-section .wrapper .calendar-container .calendar .qs-datepicker-container .qs-squares .qs-square.qs-num.qs-active {
   background-color: #4650c6;
   color: #fff;
+}
+.all-events-section .wrapper .calendar-container .calendar .qs-datepicker-container .qs-squares .qs-square.qs-day {
+  font-size: unset;
 }
 .all-events-section .wrapper .calendar-container .calendar .buttons {
   display: flex;
@@ -2381,11 +2387,15 @@ main#notFound .text-error {
   .all-events-section .section-title .calendar-btn {
     display: block;
   }
+  .all-events-section .section-title #calendarToggle {
+    display: block;
+  }
   .all-events-section .wrapper {
     flex-direction: column;
   }
   .all-events-section .wrapper .calendar-container {
     display: none;
+    margin: 0 auto;
   }
   .all-events-section .wrapper .calendar-container.active {
     display: block;
@@ -2427,6 +2437,13 @@ main#notFound .text-error {
   .all-events-section .wrapper .calendar-container {
     width: 100%;
     min-width: unset;
+  }
+  .all-events-section .wrapper .calendar-container .calendar .qs-datepicker-container .qs-squares {
+    font-size: 14px;
+    gap: 0;
+  }
+  .all-events-section .wrapper .calendar-container .calendar .qs-datepicker-container .qs-squares .qs-square {
+    width: 14.2857142857%;
   }
 }
 .f-column {

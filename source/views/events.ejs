@@ -31,8 +31,8 @@
   <section class="all-events-section" dir=<%= dir %>>
     <div class="section-title">
       <h2>Все мероприятия</h2>
-      <button class="calendar-btn">
-        <span class="_icon-ico-calendar" id="calendarToggle"></span>
+      <button onclick="toggleCalendar()" class="calendar-btn" id="calendarToggle">
+        <span class="_icon-ico-calendar"></span>
       </button>
     </div>
     <div class="wrapper">
@@ -103,12 +103,11 @@
   const calendarToggle = document.getElementById("calendarToggle");
   const calendarMenu = document.getElementById("calendarMenu");
 
-  calendarToggle.addEventListener("click", function (event) {
-    // event.preventDefault();
-
+  function toggleCalendar() {
     calendarToggle.classList.toggle("active");
     calendarMenu.classList.toggle("active");
-  });
+  }
+  
 
   const pageNumButtons = document.querySelectorAll('.page-num');
 

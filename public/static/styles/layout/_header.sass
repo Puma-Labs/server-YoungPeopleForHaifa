@@ -219,12 +219,13 @@ header
                 transform: scale(0) 
 
         .navbar
+          transform: translateY(-100%)
           opacity: 0
           flex-direction: column
           position: relative
           height: max-content
           box-shadow: -12px 12px 0 0 $blue_background
-          top: -100%
+          // top: -100%
           transition: all 0.3s ease-in-out
           .nav-item
             border-top: none
@@ -236,8 +237,9 @@ header
             &:hover
               transform: none
           &.active
+            transform: translateY(0%)
             opacity: 1
-            top: 0
+            // top: 0
 
       &.rtl
         nav     

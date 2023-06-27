@@ -14,7 +14,7 @@ const datePicker = datepicker("#datepicker", {
     const value = date.toLocaleDateString()
     input.value = value
   },
-  // alwaysShow: true,
+  alwaysShow: true,
   customDays: ['В', 'П', 'В', 'С', 'Ч', 'П', 'С'],
   customMonths: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
   overlayButton: 'Выбрать',
