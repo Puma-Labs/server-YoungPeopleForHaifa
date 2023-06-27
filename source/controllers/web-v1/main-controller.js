@@ -4,8 +4,8 @@ const EventService = require("../../service/event-service");
 class MainController {
 
   async home(req, res) {
-    const eventsList = await EventService.getList();
-    const upcomingEvents = MainController.getUpcomingEvents(eventsList, 4);
+    const {page = 1, limit = 9} = req.query
+    const upcomingEvents = await EventService.getUpcomingEvents(4);
     const lang = MainController.setLanguageCookie(req, res);
 
     res.render("home", {
@@ -18,30 +18,55 @@ class MainController {
     });
   }
 
+  async eventsJSON(req, res) {
+      console.log('eventsJSON')
+      const {page = 1, limit = 9} = req.query
+      const selectedDate = req.query?.selectedDate;
+
+      const lang = MainController.setLanguageCookie(req, res);
+      const {eventsList, count} = await EventService.getList(page, limit, selectedDate);
+
+      res.render("components/events-section", {
+          layout: false,
+          data: eventsList,
+          count: count || 1,
+          currentPage: page,
+          moment,
+          lang,
+      });
+  }
+
   async events(req, res) {
-    const selectedDate = req.query.date;
-    console.log(selectedDate);
+      const {page = 1, limit = 9} = req.query
+      const selectedDate = req.query?.selectedDate;
+      const date = req.query.date;
 
     let eventsList;
+    let count;
     if (selectedDate) {
-      eventsList = await EventService.getListByDate(selectedDate);
-
-      res.json(eventsList);
+        const eventListData = await EventService.getList(page, limit, selectedDate);
+        eventsList = eventListData.eventsList
+      res.json({eventsList, count: eventListData.count});
       return;
-
     } else {
-      eventsList = await EventService.getList();
+        const eventListData = await EventService.getList(page, limit, date);
+        eventsList = eventListData.eventsList
+        count = eventListData.count
     }
 
-    const upcomingEvents = MainController.getUpcomingEvents(eventsList, 8);
+    const upcomingEvents = await EventService.getUpcomingEvents(4);
     const lang = MainController.setLanguageCookie(req, res);
 
+
+   console.log('count', count)
+
     res.render("events", {
-      layout: "layout",
       title: "",
       page: "events",
       data: eventsList,
       upcomingEvents,
+      count: count || 1,
+      currentPage: page,
       lang,
       moment,
     });
@@ -49,12 +74,9 @@ class MainController {
 
   async event(req, res) {
     const { id } = req.params;
+    const {page = 1, limit = 9} = req.query
     const event = await EventService.getOne(id);
-    const eventsList = await EventService.getList();
-    const upcomingEvents = MainController.getUpcomingEvents(
-      eventsList.filter((e) => e.id !== id),
-      4
-    );
+    const upcomingEvents = await EventService.getUpcomingEvents(4);
     const lang = MainController.setLanguageCookie(req, res);
 
     res.render("event", {
@@ -78,16 +100,6 @@ class MainController {
       lang = "ru";
     }
     return lang;
-  }
-
-  static getUpcomingEvents(eventsList, limit) {
-    const upcomingEvents = eventsList
-      .filter((event) => moment(event.date).isSameOrAfter(moment()))
-      .slice(0, limit);
-
-    upcomingEvents.sort((a, b) => moment(a.date).diff(moment(b.date)));
-
-    return upcomingEvents;
   }
 }
 

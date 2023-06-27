@@ -4,9 +4,10 @@ const EventService = require('../../service/event-service')
 
 class EventController {
     async getters(req, res) {
-
-        const eventsList = await EventService.getList()
-        res.json(eventsList)
+        const {page = 1, limit = 2000} = req.query
+        const {eventsList, count} = await EventService.getList(page, limit)
+        const upcomingEvents = await EventService.getUpcomingEvents(8)
+        res.json({upcomingEvents, eventsList, count})
     }
 
     async getOne(req, res) {
@@ -23,7 +24,7 @@ class EventController {
             // const type = coverData.substring("data:image/".length, coverData.indexOf(";base64")).slice(0, 3);
             const path = `/images/events/`
             const fileName = `${__translit(dataUpdate.title.slice(0, 20))}-${__randomString(10)}.jpeg`
-            
+
             dataUpdate.cover = __imageSave(path, fileName, coverData)
         }
 
@@ -39,7 +40,7 @@ class EventController {
           // const type = coverData.substring("data:image/".length, coverData.indexOf(";base64")).slice(0, 3);
           const path = `/images/events/`
           const fileName = `${__translit(dataCreate.title.slice(0, 20))}-${__randomString(10)}.jpeg`
-  
+
           dataCreate.cover = __imageSave(path, fileName, coverData)
         }
 

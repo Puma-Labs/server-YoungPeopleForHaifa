@@ -19,17 +19,17 @@
             <img class="bg-shape" src="/static/assets/images/bg-star.png" alt=""/>
             <img class="avatar" src="/static/assets/images/avatar8.png" alt=""/>
             <div class="bubble">
-              <div class="corner <%= dir === 'ltr' ? 'left' : 'right' %>" ></div> 
+              <div class="corner <%= dir === 'ltr' ? 'left' : 'right' %>" ></div>
               <div class="text-container <%= dir === 'ltr' ? 'left' : 'right' %>" >
                 <p>
-                  Мы — некоммерческая организация "Молодежь для Хайфы", созданная волонтёрами для развития города и помощи людям.  
+                    <%= __('translate-1')%>
                 </p>
                 <p>
-                  Наша цель - создать лучшие условия самореализации для молодёжи: от получения качественного образования до создания своего бизнеса.
+                    <%= __('translate-2')%>
                 </p>
-              </div>  
-            </div>     
-          </div>       
+              </div>
+            </div>
+          </div>
         </div>
         <div class="support frame <%= dir %>">
           <button class="slide-btn-big join-btn <%= dir %>">
@@ -38,7 +38,7 @@
               <span class="arrow _icon-ico-arrow-short"></span>
             </span>
           </button>
-        </div>        
+        </div>
       </div>
       <div class="wrapper-right">
         <div class="video frame <%= dir %>">
@@ -57,7 +57,7 @@
             <img src="/static/assets/images/avatar6.png" alt="" />
             <img src="/static/assets/images/avatar7.png" alt="" />
           </div>
-        </div>              
+        </div>
       </div>
     </div>
   </section>
@@ -75,8 +75,8 @@
             Мы занимаемся социальными проектами по развитию города и помогаем молодёжи реализовать себя в профессиональных, творческих, спортивных программах:
           </p>
         </div>
-        <div class="corner <%= dir === 'ltr' ? 'right' : 'left' %>" ></div>   
-      </div>     
+        <div class="corner <%= dir === 'ltr' ? 'right' : 'left' %>" ></div>
+      </div>
     </div>
     <div class="cards">
       <div class="card">
@@ -110,7 +110,7 @@
         <div class="card-text frame <%= dir %>">
           <h4>Помощь в трудоустройстве и создании собственного дела</h4>
         </div>
-      </div>           
+      </div>
     </div>
   </section>
 
@@ -125,14 +125,14 @@
           <div class="corner <%= dir === 'ltr' ? 'left' : 'right' %>" ></div>
           <div class="text-container <%= dir === 'ltr' ? 'left' : 'right' %>" >
             <p>
-              Мы хотим жить в гостеприимном, современном и полном возможностей городе. И убеждены в том, что сделать Хайфу именно такой — в наших силах. 
+              Мы хотим жить в гостеприимном, современном и полном возможностей городе. И убеждены в том, что сделать Хайфу именно такой — в наших силах.
             </p>
             <p>
               Мы ждём тех, кто готов и не боится воплощать свои идеи, работать в команде и добиваться того, что кажется невозможным!
             </p>
           </div>
         </div>
-        
+
       </div>
       <div class="right-wrapper">
         <div class="text">
@@ -142,7 +142,7 @@
                 На этом сайте вы можете найти полную информацию о наших проектах и мероприятиях, а также узнать, как присоединиться к нашей команде.
               </p>
             </div>
-            <div class="corner <%= dir === 'ltr' ? 'right' : 'left' %>" ></div>   
+            <div class="corner <%= dir === 'ltr' ? 'right' : 'left' %>" ></div>
           </div>
           <button class="slide-btn-big join-btn <%= dir %>">
             <span class="button-text">Присоединиться к нам</span>
@@ -151,7 +151,7 @@
             </span>
           </button>
         </div>
-        <img src="/static/assets/images/avatar-vector2.png" alt=""/>            
+        <img src="/static/assets/images/avatar-vector2.png" alt=""/>
       </div>
     </div>
   </section>
@@ -189,7 +189,7 @@
     </a>
   </section>
 
-  <section class="donation-section" dir=<%= dir %>>
+  <section class="donation-section" id="connect-link" dir=<%= dir %>>
     <div class="section-title">
       <h2>Пожертвования</h2>
     </div>
@@ -229,23 +229,23 @@
             <button class="copy-button">
               <span class=" _icon-ico-copy"></span>
             </button>
-          </div>           
-        </div>   
+          </div>
+        </div>
       </div>
       <div class="description frame <%= dir %>">
         <img class="bg-shape" src="/static/assets/images/bg-star.png" alt=""/>
         <img class="avatar" src="/static/assets/images/avatar-vector4.png" alt=""/>
-        <div class="bubble"> 
+        <div class="bubble">
           <div class="text-container <%= dir === 'ltr' ? 'right' : 'left' %>" >
             <p>
-              Мы рады, что вы заинтересовались поддержкой нашей НКО. Наша организация работает над различными проектами, направленными на помощь людям, организации Эвентов и улучшения уровня жизни в Хайфе. 
+              Мы рады, что вы заинтересовались поддержкой нашей НКО. Наша организация работает над различными проектами, направленными на помощь людям, организации Эвентов и улучшения уровня жизни в Хайфе.
             </p>
             <p>
               Вы можете сделать свой вклад через наш сайт, выбрав удобный для вас способ оплаты. Мы также приветствуем любую другую форму поддержки, такую как волонтерская работа или распространение информации о нашей деятельности.
             </p>
           </div>
-          <div class="corner <%= dir === 'ltr' ? 'right' : 'left' %>" ></div> 
-        </div>        
+          <div class="corner <%= dir === 'ltr' ? 'right' : 'left' %>" ></div>
+        </div>
       </div>
     </div>
     <div class="avatars frame <%= dir %>">
@@ -315,7 +315,7 @@
         <div class="fact-number">
           3,6%
         </div>
-      </div>     
+      </div>
     </div>
 
   </section>
