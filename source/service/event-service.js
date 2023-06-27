@@ -1,3 +1,4 @@
+const moment = require("moment");
 const EventModel = require('../models/event-model');
 
 class EventService {
@@ -12,8 +13,17 @@ class EventService {
 }
 
 async getListByDate(date) {
-  const res = await EventModel.find({ date: date });
-  return res
+  const startDate = moment(date).startOf('day').toISOString();
+  const endDate = moment(date).endOf('day').toISOString();
+
+  const res = await EventModel.find({
+    date: {
+      $gte: startDate,
+      $lte: endDate
+    }
+  });
+
+  return res;
 }
 
   async create(newEvent) {

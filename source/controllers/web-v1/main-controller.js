@@ -19,16 +19,20 @@ class MainController {
   }
 
   async events(req, res) {
-    const { date } = req.params;
+    const selectedDate = req.query.date;
+    console.log(selectedDate);
 
-    // let eventsList;
-    // if (date) {
-    //   eventsList = await EventService.getListByDate(date);
-    // } else {
-    //   eventsList = await EventService.getList();
-    // }
+    let eventsList;
+    if (selectedDate) {
+      eventsList = await EventService.getListByDate(selectedDate);
 
-    const eventsList = await EventService.getList();
+      res.json(eventsList);
+      return;
+
+    } else {
+      eventsList = await EventService.getList();
+    }
+
     const upcomingEvents = MainController.getUpcomingEvents(eventsList, 8);
     const lang = MainController.setLanguageCookie(req, res);
 

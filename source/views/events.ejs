@@ -123,30 +123,6 @@
   });
 </script>
 
+
 <script src="https://unpkg.com/js-datepicker"></script>
-
-<script>
-  const datePickerForm = document.getElementById("datepickerForm");
-  const datePickerInput = document.getElementById("datepicker");
-  const eventsContainer = document.getElementById("allEvents-container");
-
-  let selectedDate;
-
-  const datePicker = datepicker("#datepicker", {
-    onSelect: (instance, date) => {
-      selectedDate = date;
-      console.log(selectedDate);
-    },
-      formatter: (input, date, instance) => {
-      const value = date.toLocaleDateString()
-      input.value = value
-    },
-    alwaysShow: true,
-    customDays: ['В', 'П', 'В', 'С', 'Ч', 'П', 'С'],
-    customMonths: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-    overlayButton: 'Выбрать',
-    overlayPlaceholder: 'Введите год',
-  });
-
-  
-</script>
+<script type="module" src="/static/scripts/datePicker.js"></script>
