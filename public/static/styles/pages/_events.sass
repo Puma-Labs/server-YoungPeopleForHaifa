@@ -48,9 +48,13 @@
         .img-container
           img
             transform: scale(1.1)
+          &.empty img
+            transform: none
 
 .all-events-section
   margin-bottom: 16rem
+  .section-title #calendarToggle
+    display: none
   .wrapper
     display: flex
     width: 100%
@@ -58,7 +62,7 @@
     .calendar-container
       width: 358px
       min-width: 358px
-      height: 222px
+      height: fit-content
       border: $border_black
       border-radius: 8px
       .top
@@ -72,6 +76,50 @@
           font-weight: 400
         .calendar-ico
           font-size: 20px
+      .calendar
+        padding: 1rem
+        .input
+          height: 56px
+        .qs-datepicker-container
+          position: unset
+          box-shadow: none
+          -webkit-box-shadow: none
+          margin: 1rem auto
+          width: 100%
+          .qs-squares
+            justify-content: center
+            gap: 0.2rem
+            padding: 0.8rem 0
+            .qs-square
+              width: 40px
+              height: 40px
+              font-size: 16px
+              color: #000
+              font-weight: normal
+              border-radius: 50%
+            .qs-square.qs-num
+              font-size: unset
+              &:hover
+                border: 1px solid #4650c6
+                background-color: inherit
+              &.qs-current
+                text-decoration: none
+                font-weight: 600
+              &.qs-active
+                background-color: #4650c6
+                color: #fff
+            .qs-square.qs-day
+              font-size: unset
+        .buttons
+          display: flex
+          width: 100%
+          justify-content: end
+          gap: 1rem
+          margin-top: 1rem
+          button
+            font-size: 14px
+            font-weight: 600
+            line-height: 20px
     .events
       width: 100%
       .pagination
@@ -127,10 +175,13 @@
   .all-events-section
     .section-title .calendar-btn
       display: block
+    .section-title #calendarToggle
+      display: block
     .wrapper
       flex-direction: column
       .calendar-container
         display: none
+        margin: 0 auto
         &.active
           display: block
         .top .calendar-ico
@@ -162,6 +213,13 @@
   .all-events-section .wrapper .calendar-container
     width: 100%
     min-width: unset
+    .calendar .qs-datepicker-container .qs-squares
+      font-size: 14px
+      gap: 0
+      .qs-square
+        width: calc(100% / 7)
+        // width: 35px
+        // height: calc(100% / 6)
 
 
 

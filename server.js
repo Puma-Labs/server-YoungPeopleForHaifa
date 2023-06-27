@@ -19,7 +19,6 @@ server.use(bodyParser.urlencoded({extended: false}));
 server.use(cookieParser())
 server.use(express.json())
 
-
 server.use('/api/v1', require('./source/routes/api/api-v1'));
 server.use('/', require('./source/routes/web/web-v1'));
 

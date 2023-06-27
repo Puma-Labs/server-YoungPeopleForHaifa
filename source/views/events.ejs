@@ -1,5 +1,7 @@
 <%
-  const dir = "ltr"
+  const dir = lang === "he" ? "rtl" : "ltr"
+  const eventsList = data || []
+  const emptyCover = "/static/assets/images/preview-empty.png"
 %>
 
 <main>
@@ -9,81 +11,28 @@
       <h2>Будущие события</h2>
     </div>
     <div class="events-container <%= dir %>">
-      <a href="/events/event">
-        <div class="event event-1">
-          <button class="options-menu _icon-ico-menu"></button>
-          <div class="img-container">
-            <img src="/static/assets/images/e1.png" alt=""/>
+      <% upcomingEvents.map((event, i) => { %>
+        <a href="/events/<%= event.id %>">
+          <div class="event <%= (i === 0) ? 'event-1' : '' %>">
+            <button class="options-menu _icon-ico-menu"></button>
+            <div class="img-container <%= (!event.cover) ? 'empty' : '' %>">
+              <img src=<%= event.cover || emptyCover %> alt=""/>
+            </div>
+            <h4 class="event-title"><%= event.title %></h4>
+            <div class="event-info">
+              <%= moment(event.date).format("DD.MM.YYYY") %> - <%= moment(event.time).format("hh:mm") %> - <%= event.place %>
+            </div>
           </div>
-          <h4 class="event-title">Фитнес. Поддержка оздоровительно...</h4>
-          <div class="event-info">22.02.2023 - 10:00 - Хайфа, пл. городская. д. 3</div>
-        </div>
-      </a>
-
-      <div class="event">
-        <button class="options-menu _icon-ico-menu"></button>
-        <div class="img-container">
-          <img src="/static/assets/images/e2.png" alt=""/>
-        </div>
-        <h4 class="event-title">Фитнес. Поддержка оздоровительно...</h4>
-        <div class="event-info">22.02.2023 - 10:00 - Хайфа, пл. городская. д. 3</div>
-      </div>
-      <div class="event">
-        <button class="options-menu _icon-ico-menu"></button>
-        <div class="img-container">
-          <img src="/static/assets/images/e3.png" alt=""/>
-        </div>
-        <h4 class="event-title">Фитнес. Поддержка оздоровительно...</h4>
-        <div class="event-info">22.02.2023 - 10:00 - Хайфа, пл. городская. д. 3</div>
-      </div>
-      <div class="event">
-        <button class="options-menu _icon-ico-menu"></button>
-        <div class="img-container">
-          <img src="/static/assets/images/e4.png" alt=""/>
-        </div>
-        <h4 class="event-title">Фитнес. Поддержка оздоровительно...</h4>
-        <div class="event-info">22.02.2023 - 10:00 - Хайфа, пл. городская. д. 3</div>
-      </div>
-      <div class="event">
-        <button class="options-menu _icon-ico-menu"></button>
-        <div class="img-container">
-          <img src="/static/assets/images/e5.png" alt=""/>
-        </div>
-        <h4 class="event-title">Фитнес. Поддержка оздоровительно...</h4>
-        <div class="event-info">22.02.2023 - 10:00 - Хайфа, пл. городская. д. 3</div>
-      </div>
-      <div class="event">
-        <button class="options-menu _icon-ico-menu"></button>
-        <div class="img-container">
-          <img src="/static/assets/images/e6.png" alt=""/>
-        </div>
-        <h4 class="event-title">Фитнес. Поддержка оздоровительно...</h4>
-        <div class="event-info">22.02.2023 - 10:00 - Хайфа, пл. городская. д. 3</div>
-      </div>
-      <div class="event">
-        <button class="options-menu _icon-ico-menu"></button>
-        <div class="img-container">
-          <img src="/static/assets/images/e7.png" alt=""/>
-        </div>
-        <h4 class="event-title">Фитнес. Поддержка оздоровительно...</h4>
-        <div class="event-info">22.02.2023 - 10:00 - Хайфа, пл. городская. д. 3</div>
-      </div>
-      <div class="event">
-        <button class="options-menu _icon-ico-menu"></button>
-        <div class="img-container">
-          <img src="/static/assets/images/e8.png" alt=""/>
-        </div>
-        <h4 class="event-title">Фитнес. Поддержка оздоровительно...</h4>
-        <div class="event-info">22.02.2023 - 10:00 - Хайфа, пл. городская. д. 3</div>
-      </div>
+        </a>
+      <% }) %>
     </div>
   </section>
 
   <section class="all-events-section" dir=<%= dir %>>
     <div class="section-title">
       <h2>Все мероприятия</h2>
-      <button class="calendar-btn">
-        <span class="_icon-ico-calendar" id="calendarToggle"></span>
+      <button onclick="toggleCalendar()" class="calendar-btn" id="calendarToggle">
+        <span class="_icon-ico-calendar"></span>
       </button>
     </div>
     <div class="wrapper">
@@ -94,81 +43,37 @@
           </div>
           <span class="calendar-ico _icon-ico-calendar"></span>
         </div>
+        <div class="calendar">
+          <form id="datepickerForm">
+            <div>
+              <div class="input-wrapper <%= dir %>">
+                <label for="datepicker">Дата</label>
+                <input class="input" id="datepicker" placeholder="дд/мм/гггг" readonly>
+              </div>
+            </div>
+            <div class="buttons">
+              <button type="button" id="resetButton">Сбросить</button>
+              <button type="submit">Выбрать</button>
+            </div>
+          </form>
+        </div>
       </div>
       <div class="events">
-        <div class="events-container <%= dir %>">
-          <div class="event">
-            <button class="options-menu _icon-ico-menu"></button>
-            <div class="img-container">
-              <img src="/static/assets/images/e9.png" alt=""/>
-            </div>
-            <h4 class="event-title">Фитнес. Поддержка оздоровительно...</h4>
-            <div class="event-info">22.02.2023 - 10:00 - Хайфа, пл. городская. д. 3</div>
-          </div>
-          <div class="event">
-            <button class="options-menu _icon-ico-menu"></button>
-            <div class="img-container">
-              <img src="/static/assets/images/e10.png" alt=""/>
-            </div>
-            <h4 class="event-title">Фитнес. Поддержка оздоровительно...</h4>
-            <div class="event-info">22.02.2023 - 10:00 - Хайфа, пл. городская. д. 3</div>
-          </div>
-          <div class="event">
-            <button class="options-menu _icon-ico-menu"></button>
-            <div class="img-container">
-              <img src="/static/assets/images/e11.png" alt=""/>
-            </div>
-            <h4 class="event-title">Фитнес. Поддержка оздоровительно...</h4>
-            <div class="event-info">22.02.2023 - 10:00 - Хайфа, пл. городская. д. 3</div>
-          </div>
-          <div class="event">
-            <button class="options-menu _icon-ico-menu"></button>
-            <div class="img-container">
-              <img src="/static/assets/images/e12.png" alt=""/>
-            </div>
-            <h4 class="event-title">Фитнес. Поддержка оздоровительно...</h4>
-            <div class="event-info">22.02.2023 - 10:00 - Хайфа, пл. городская. д. 3</div>
-          </div>
-          <div class="event">
-            <button class="options-menu _icon-ico-menu"></button>
-            <div class="img-container">
-              <img src="/static/assets/images/e13.png" alt=""/>
-            </div>
-            <h4 class="event-title">Фитнес. Поддержка оздоровительно...</h4>
-            <div class="event-info">22.02.2023 - 10:00 - Хайфа, пл. городская. д. 3</div>
-          </div>
-          <div class="event">
-            <button class="options-menu _icon-ico-menu"></button>
-            <div class="img-container">
-              <img src="/static/assets/images/e14.png" alt=""/>
-            </div>
-            <h4 class="event-title">Фитнес. Поддержка оздоровительно...</h4>
-            <div class="event-info">22.02.2023 - 10:00 - Хайфа, пл. городская. д. 3</div>
-          </div>
-          <div class="event">
-            <button class="options-menu _icon-ico-menu"></button>
-            <div class="img-container">
-              <img src="/static/assets/images/e15.png" alt=""/>
-            </div>
-            <h4 class="event-title">Фитнес. Поддержка оздоровительно...</h4>
-            <div class="event-info">22.02.2023 - 10:00 - Хайфа, пл. городская. д. 3</div>
-          </div>
-          <div class="event">
-            <button class="options-menu _icon-ico-menu"></button>
-            <div class="img-container">
-              <img src="/static/assets/images/e16.png" alt=""/>
-            </div>
-            <h4 class="event-title">Фитнес. Поддержка оздоровительно...</h4>
-            <div class="event-info">22.02.2023 - 10:00 - Хайфа, пл. городская. д. 3</div>
-          </div>
-          <div class="event">
-            <button class="options-menu _icon-ico-menu"></button>
-            <div class="img-container">
-              <img src="/static/assets/images/e17.png" alt=""/>
-            </div>
-            <h4 class="event-title">Фитнес. Поддержка оздоровительно...</h4>
-            <div class="event-info">22.02.2023 - 10:00 - Хайфа, пл. городская. д. 3</div>
-          </div>
+        <div id="allEvents-container" class="events-container <%= dir %>">
+          <% eventsList.map(event => { %>
+            <a href="/events/<%= event.id %>">
+              <div class="event">
+                <button class="options-menu _icon-ico-menu"></button>
+                <div class="img-container <%= (!event.cover) ? 'empty' : '' %>">
+                  <img src=<%= event.cover || emptyCover %> alt=""/>
+                </div>
+                <h4 class="event-title"><%= event.title %></h4>
+                <div class="event-info">
+                  <%= moment(event.date).format("DD.MM.YYYY") %> - <%= moment(event.time).format("hh:mm") %> - <%= event.place %>
+                </div>
+              </div>
+            </a>
+          <% }) %>
         </div>
         <div class="pagination">
           <button class="prev-btn <%= dir %>">
@@ -198,12 +103,11 @@
   const calendarToggle = document.getElementById("calendarToggle");
   const calendarMenu = document.getElementById("calendarMenu");
 
-  calendarToggle.addEventListener("click", function (event) {
-    // event.preventDefault();
-
+  function toggleCalendar() {
     calendarToggle.classList.toggle("active");
     calendarMenu.classList.toggle("active");
-  });
+  }
+  
 
   const pageNumButtons = document.querySelectorAll('.page-num');
 
@@ -217,3 +121,7 @@
     });
   });
 </script>
+
+
+<script src="https://unpkg.com/js-datepicker"></script>
+<script type="module" src="/static/scripts/datePicker.js"></script>

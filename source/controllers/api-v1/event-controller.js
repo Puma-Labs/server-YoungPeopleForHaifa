@@ -20,9 +20,9 @@ class EventController {
 
         if(dataUpdate.cover && dataUpdate.cover.includes("base64")) {
             const coverData = dataUpdate.cover
-            const type = coverData.substring("data:image/".length, coverData.indexOf(";base64")).slice(0, 3);
-            const path = `/icon/events/`
-            const fileName = `${__translit(dataUpdate.title.slice(0, 20))}-${__randomString(10)}.${type}`
+            // const type = coverData.substring("data:image/".length, coverData.indexOf(";base64")).slice(0, 3);
+            const path = `/images/events/`
+            const fileName = `${__translit(dataUpdate.title.slice(0, 20))}-${__randomString(10)}.jpeg`
             
             dataUpdate.cover = __imageSave(path, fileName, coverData)
         }
@@ -36,9 +36,9 @@ class EventController {
 
         if (dataCreate.cover) {
           const coverData = dataCreate.cover
-          const type = coverData.substring("data:image/".length, coverData.indexOf(";base64")).slice(0, 3);
+          // const type = coverData.substring("data:image/".length, coverData.indexOf(";base64")).slice(0, 3);
           const path = `/images/events/`
-          const fileName = `${__translit(dataCreate.title.slice(0, 20))}-${__randomString(10)}.${type}`
+          const fileName = `${__translit(dataCreate.title.slice(0, 20))}-${__randomString(10)}.jpeg`
   
           dataCreate.cover = __imageSave(path, fileName, coverData)
         }

@@ -368,52 +368,6 @@ $shadow-width: 12px
 
 //------------------------------------------------------
 
-// .bubble
-//   display: flex
-//   height: max-content
-//   .corner
-//     width: 30px
-//     height: 50px
-//     overflow: hidden
-//     position: relative
-//     align-self: flex-end
-//     border-bottom: 1px solid $color_black
-//     &::before
-//       content: ""
-//       display: block
-//       width: 200%
-//       height: 200%
-//       position: absolute
-//       border: 1px solid $color_black
-//       border-radius: 16px
-//     &.left
-//       margin-right: -1px
-//       &:before
-//         bottom: 0
-//         right: 0
-//         box-shadow: 15px 25px 0 0 $yellow_background
-//     &.right
-//       margin-left: -1px
-//       &:before
-//         bottom: 0
-//         left: 0
-//         box-shadow: -15px 25px 0 0 $yellow_background
-
-//   .text-container
-//     @include fontBubble
-//     padding: 1rem
-//     background-color: $yellow_background
-//     border: 1px solid $color_black
-//     border-radius: 12px
-//     &.left
-//       border-bottom-left-radius: 0
-//     &.right
-//       border-bottom-right-radius: 0
-
-//     p
-//       @include fontBubble
-//     p:not(:last-child)
-//       margin-bottom: 0.4rem
 
 
 .slide-btn-big
@@ -497,15 +451,6 @@ $shadow-width: 12px
     padding: 0 5px
     font-size: 12px
     font-weight: 600
-    letter-spacing: 0.5px
-  .input
-    width: 100%
-    height: 48px
-    padding: 0 1rem
-    background-color: $background_main
-    outline: none
-    border: $border_black
-    border-radius: 4px
     letter-spacing: 0.5px
   .copy-button
     position: absolute
@@ -821,7 +766,7 @@ $shadow-width: 12px
       width: 100%
       height: 200px
 
-@media only screen and (max-width: 1260px)
+@media only screen and (max-width: 1490px)
   .events-section .events-container
     display: grid
     grid-template-columns: repeat(auto-fill, minmax(285px, 1fr))
@@ -943,7 +888,7 @@ $shadow-width: 12px
   
 //---------------------------------------------------------
 
-@media only screen and (max-width: 1200px)
+@media only screen and (max-width: 1600px)
   .important-facts-section .facts-container .fact
     width: calc(100% / 4)
     height: unset

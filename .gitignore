@@ -119,6 +119,7 @@ dist
 # TernJS port file
 .tern-port
 /public/images
+/public/icon
 /store/
 
 # Stores VSCode versions used for testing VSCode extensions
@@ -132,3 +133,4 @@ dist
 .pnp.*
 
 .idea
+.DS_Store
