@@ -142,6 +142,16 @@
           &.rtl
             .btn-arrow
               transform: scaleX(-1)
+          &.disabled
+            .btn-arrow
+              color: #a8a6aa
+              border-color: #a8a6aa
+            &:hover
+              .btn-arrow
+                color: #a8a6aa
+                cursor: default
+                &::after
+                  transform: translateX(100%)
         .prev-btn
           transform: scaleX(-1)
         .pages
