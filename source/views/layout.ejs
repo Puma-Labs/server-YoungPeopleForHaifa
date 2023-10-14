@@ -46,9 +46,11 @@
             </li>
               <li class="large">
                 <div class="nav-item languages">
-                  <button onclick="setLang('ru')" class="<%= (dir === 'ltr') ? 'btn-selected' : '' %>">RUS</button>
+                  <button onclick="setLang('ru')" class="<%= (lang === 'ru') ? 'btn-selected' : '' %>">RUS</button>
                   /
-                  <button onclick="setLang('he')" class="<%= (dir === 'rtl') ? 'btn-selected' : '' %>">HEB</button>
+                  <button onclick="setLang('he')" class="<%= (lang === 'he') ? 'btn-selected' : '' %>">HEB</button>
+                  /
+                  <button onclick="setLang('en')" class="<%= (lang === 'en') ? 'btn-selected' : '' %>">EN</button>
                 </div>
               </li>
               <li>

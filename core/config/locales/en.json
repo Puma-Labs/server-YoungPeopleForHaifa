@@ -1,0 +1,64 @@
+{
+    "general.org-name": "Young people for Haifa",
+    "nav.link.join": "Join",
+    "nav.link.events": "Events",
+    "nav.link.charity": "Donations",
+    "section.support-for-future.heading": "The future of Haifa.",
+    "section.support-for-future.desc": [
+        "We are a non-profit organization called 'Youth People for Haifa,' created by volunteers to develop the city and assist people.",
+        "Our goal is to create the best conditions for self-realization for youth, from obtaining quality education to starting their own businesses."
+    ],
+    "section.support-for-future.cta": "Support Haifa",
+    "section.how-we-help.heading": "How?",
+    "section.how-we-help.desc": "We are involved in social projects for city development and help youth realize themselves in professional, creative, and sports programs:",
+    "section.how-we-help.event-types": [
+        "Creating a comfortable urban environment for the residents of Haifa",
+        "Educational courses, lectures, workshops",
+        "Meetings, trips, holidays for new friends and experiences",
+        "Assistance in employment and starting your own business"
+    ],
+    "section.why-we-help.heading": "Why are we doing this?",
+    "section.why-we-help.desc1": [
+        "We want to live in a welcoming, modern, and full of opportunities city. We believe that making Haifa exactly like that is within our capabilities.",
+        "We welcome those who are ready and unafraid to bring their ideas to life, work as a team, and achieve what may seem impossible!"
+    ],
+    "section.why-we-help.desc2": [
+        "On this website, you can find comprehensive information about our projects and events, as well as learn how to join our team."
+    ],
+    "section.why-we-help.cta": "Join us",
+    "section.events.heading": "Events",
+    "section.events.show-all": "Show all",
+    "section.charity.heading": "Donations",
+    "section.charity.requisites.heading": "Our details",
+    "section.charity.requisites.bank-name": "Bank name",
+    "section.charity.requisites.swift-code": "SWIFT",
+    "section.charity.requisites.iban": "IBAN",
+    "section.charity.requisites.name": "Recipient's full name",
+    "section.charity.desc": [
+        "We are pleased that you are interested in supporting our non-profit organization. Our organization is involved in various projects aimed at helping people, organizing events, and improving the quality of life in Haifa.",
+        "You can make your contribution through our website, choosing a convenient payment method for you. We also welcome any other form of support, such as volunteering or spreading information about our activities."
+    ],
+    "section.charity.cta-bant-transfer": "Bank transfer",
+    "section.charity.cta-join-us": "Join us",
+    "section.why-it-is-important.heading": "Why is this important?",
+    "section.why-it-is-important.families-leave": "Thousands of young families left Haifa in 2022",
+    "section.why-it-is-important.young-specs-leave-place": "The place of youth out migration from the city",
+    "section.why-it-is-important.students-in-center": "Thousands of students are looking for jobs in the center of the country after graduation",
+    "section.why-it-is-important.business-in-haifa": "The Israeli business is located in Haifa",
+    "section.pages.main": "Home",
+    "section.pages.events": "Events",
+    "section.pages.blog": "Blog",
+    "section.pages.shop": "Store",
+    "section.pages.join": "Join",
+    "section.future-events.heading": "Upcoming events",
+    "section.all-events.heading": "All events",
+    "section.all-events.date": "Event date",
+    "section.all-events.input-date": "Date",
+    "section.all-events.reset": "Reset",
+    "section.all-events.submit": "Select",
+    "section.other-events.heading": "All events",
+    "section.other-events.show-all": "Show all",
+    "section.footer.links.policy": "Privacy policy",
+    "section.footer.links.personal": "Processing of personal data",
+    "section.footer.links.cookie": "Cookie"
+}

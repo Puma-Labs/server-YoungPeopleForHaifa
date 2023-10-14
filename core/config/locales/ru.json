@@ -1,76 +1,64 @@
 {
-	"general.org-name": "Young people for Haifa",
-
-	"nav.link.join": "Присоединиться",
-	"nav.link.events": "События",
-	"nav.link.charity": "Пожертвования",
-	
-	"section.support-for-future.heading": "Будущее Хайфы",
-	"section.support-for-future.desc": [
-		"Мы — некоммерческая организация \"Молодежь для Хайфы\", созданная волонтёрами для развития города и помощи людям.",
-		"Наша цель - создать лучшие условия самореализации для молодёжи: от получения качественного образования до создания своего бизнеса."
-	],
-	"section.support-for-future.cta": "Поддержать Хайфу",
-	
-	"section.how-we-help.heading": "Как?",
-	"section.how-we-help.desc": "Мы занимаемся социальными проектами по развитию города и помогаем молодёжи реализовать себя в профессиональных, творческих, спортивных программах:",
-	"section.how-we-help.event-types": [
-		"Создание комфортной городской среды для жителей Хайфы",
-		"Обучающие курсы, лекции, мастер-классы",
-		"Встречи, поездки, праздники для новых друзей и впечатлений",
-		"Помощь в трудоустройстве и создании собственного дела"
-	],
-
-	"section.why-we-help.heading": "Зачем мы это делаем?",
-	"section.why-we-help.desc1": [
-		"Мы хотим жить в гостеприимном, современном и полном возможностей городе. И убеждены в том, что сделать Хайфу именно такой — в наших силах.",
-		"Мы ждём тех, кто готов и не боится воплощать свои идеи, работать в команде и добиваться того, что кажется невозможным!"
-	],
-	"section.why-we-help.desc2": [
-		"На этом сайте вы можете найти полную информацию о наших проектах и мероприятиях, а также узнать, как присоединиться к нашей команде."
-	],
-	"section.why-we-help.cta": "Присоединиться к нам",
-
-	"section.events.heading": "События",
-	"section.events.show-all": "Показать все",
-	
-	"section.charity.heading": "Пожертвования",
-	"section.charity.requisites.heading": "Наши реквизиты",
-	"section.charity.requisites.bank-name": "Название банка",
-	"section.charity.requisites.swift-code": "Swift код",
-	"section.charity.requisites.iban": "IBAN",
-	"section.charity.requisites.name": "ФИО получателя",
-	"section.charity.desc": [
-		"Мы рады, что вы заинтересовались поддержкой нашей НКО. Наша организация работает над различными проектами, направленными на помощь людям, организации Эвентов и улучшения уровня жизни в Хайфе.",
-		"Вы можете сделать свой вклад через наш сайт, выбрав удобный для вас способ оплаты. Мы также приветствуем любую другую форму поддержки, такую как волонтерская работа или распространение информации о нашей деятельности."
-	],
-	"section.charity.cta-bant-transfer": "Банковский перевод",
-	"section.charity.cta-join-us": "Присоединиться к нам",
-
-	"section.why-it-is-important.heading": "Почему это важно?",
-	"section.why-it-is-important.families-leave": "Тысяч молодых семей покинуло Хайфу в 2022 году",
-	"section.why-it-is-important.young-specs-leave-place": "Место по оттоку молодежи из города",
-	"section.why-it-is-important.students-in-center": "Тысяч студентов после выпуска ищут работу в центре",
-	"section.why-it-is-important.business-in-haifa": "Израильского бизнеса находится в Хайфе",
-	
-	"section.pages.main": "Главная",
-	"section.pages.events": "События",
-	"section.pages.blog": "Блог (скоро)",
-	"section.pages.shop": "Магазин (скоро)",
-	"section.pages.join": "Присоединиться",
-
-	"section.future-events.heading": "Будущие события",
-
-	"section.all-events.heading": "Все мероприятия",
-	"section.all-events.date": "Дата события",
-	"section.all-events.input-date": "Дата",
-	"section.all-events.reset": "Сбросить",
-	"section.all-events.submit": "Выбрать",
-
-	"section.other-events.heading": "Все мероприятия",
-	"section.other-events.show-all": "Показать все",
-	
-	"section.footer.links.policy": "Политика конфиденциальности",
-	"section.footer.links.personal": "Обработка персональных данных",
-	"section.footer.links.cookie": "Cookie"
+    "general.org-name": "Young people for Haifa",
+    "nav.link.join": "Присоединиться",
+    "nav.link.events": "События",
+    "nav.link.charity": "Пожертвования",
+    "section.support-for-future.heading": "Будущее Хайфы",
+    "section.support-for-future.desc": [
+        "Мы — некоммерческая организация \"Молодежь для Хайфы\", созданная волонтёрами для развития города и помощи людям.",
+        "Наша цель — создать лучшие условия самореализации для молодёжи: от получения качественного образования до создания своего бизнеса."
+    ],
+    "section.support-for-future.cta": "Поддержать Хайфу",
+    "section.how-we-help.heading": "Как?",
+    "section.how-we-help.desc": "Мы занимаемся социальными проектами по развитию города и помогаем молодёжи реализовать себя в профессиональных, творческих, спортивных программах:",
+    "section.how-we-help.event-types": [
+        "Создание комфортной городской среды для жителей Хайфы",
+        "Обучающие курсы, лекции, мастер-классы",
+        "Встречи, поездки, праздники для новых друзей и впечатлений",
+        "Помощь в трудоустройстве и создании собственного дела"
+    ],
+    "section.why-we-help.heading": "Зачем мы это делаем?",
+    "section.why-we-help.desc1": [
+        "Мы хотим жить в гостеприимном, современном и полном возможностей городе. И убеждены в том, что сделать Хайфу именно такой — в наших силах.",
+        "Мы ждём тех, кто готов и не боится воплощать свои идеи, работать в команде и добиваться того, что кажется невозможным!"
+    ],
+    "section.why-we-help.desc2": [
+        "На этом сайте вы можете найти полную информацию о наших проектах и мероприятиях, а также узнать, как присоединиться к нашей команде."
+    ],
+    "section.why-we-help.cta": "Присоединиться к нам",
+    "section.events.heading": "События",
+    "section.events.show-all": "Показать все",
+    "section.charity.heading": "Пожертвования",
+    "section.charity.requisites.heading": "Наши реквизиты",
+    "section.charity.requisites.bank-name": "Название банка",
+    "section.charity.requisites.swift-code": "SWIFT",
+    "section.charity.requisites.iban": "IBAN",
+    "section.charity.requisites.name": "ФИО получателя",
+    "section.charity.desc": [
+        "Мы рады, что вы заинтересовались поддержкой нашей НКО. Наша организация работает над различными проектами, направленными на помощь людям, организации Эвентов и улучшения уровня жизни в Хайфе.",
+        "Вы можете сделать свой вклад через наш сайт, выбрав удобный для вас способ оплаты. Мы также приветствуем любую другую форму поддержки, такую как волонтерская работа или распространение информации о нашей деятельности."
+    ],
+    "section.charity.cta-bant-transfer": "Банковский перевод",
+    "section.charity.cta-join-us": "Присоединиться к нам",
+    "section.why-it-is-important.heading": "Почему это важно?",
+    "section.why-it-is-important.families-leave": "Тысяч молодых семей покинуло Хайфу в 2022 году",
+    "section.why-it-is-important.young-specs-leave-place": "Место по оттоку молодежи из города",
+    "section.why-it-is-important.students-in-center": "Тысяч студентов после выпуска ищут работу в центре страны",
+    "section.why-it-is-important.business-in-haifa": "Израильского бизнеса находится в Хайфе",
+    "section.pages.main": "Главная",
+    "section.pages.events": "События",
+    "section.pages.blog": "Блог",
+    "section.pages.shop": "Магазин",
+    "section.pages.join": "Присоединиться",
+    "section.future-events.heading": "Будущие события",
+    "section.all-events.heading": "Все мероприятия",
+    "section.all-events.date": "Дата события",
+    "section.all-events.input-date": "Дата",
+    "section.all-events.reset": "Сбросить",
+    "section.all-events.submit": "Выбрать",
+    "section.other-events.heading": "Все мероприятия",
+    "section.other-events.show-all": "Показать все",
+    "section.footer.links.policy": "Политика конфиденциальности",
+    "section.footer.links.personal": "Обработка персональных данных",
+    "section.footer.links.cookie": "Cookie"
 }
