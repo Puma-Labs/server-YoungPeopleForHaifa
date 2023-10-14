@@ -2350,6 +2350,20 @@ main#notFound .text-error {
 .all-events-section .wrapper .events .pagination .next-btn.rtl .btn-arrow {
   transform: scaleX(-1);
 }
+.all-events-section .wrapper .events .pagination .prev-btn.disabled .btn-arrow,
+.all-events-section .wrapper .events .pagination .next-btn.disabled .btn-arrow {
+  color: #a8a6aa;
+  border-color: #a8a6aa;
+}
+.all-events-section .wrapper .events .pagination .prev-btn.disabled:hover .btn-arrow,
+.all-events-section .wrapper .events .pagination .next-btn.disabled:hover .btn-arrow {
+  color: #a8a6aa;
+  cursor: default;
+}
+.all-events-section .wrapper .events .pagination .prev-btn.disabled:hover .btn-arrow::after,
+.all-events-section .wrapper .events .pagination .next-btn.disabled:hover .btn-arrow::after {
+  transform: translateX(100%);
+}
 .all-events-section .wrapper .events .pagination .prev-btn {
   transform: scaleX(-1);
 }

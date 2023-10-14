@@ -22,20 +22,22 @@
         </a>
     <% }) %>
 </div>
-<div class="pagination">
-    <button class="prev-btn <%= dir %>">
-        <div class="arrow btn-arrow _icon-ico-arrow-short"></div>
-    </button>
-    <div class="pages">
-        <% for(let i = 1; i <= countPage; i++) { %>
-            <button class="page-num <%= currentPage == i ? 'active' : ''%>" data-page="<%= i %>"><%= i %></button>
-        <% } %>
-        <% if(countPage > 8) {%>
-            <span class="dots">...</span>
-            <button class="page-num">18</button>
-        <% }%>
-    </div>
-    <button class="next-btn <%= dir %>">
-        <div class="arrow btn-arrow _icon-ico-arrow-short"></div>
-    </button>
-</div>
+<% if (countPage > 1) { %>
+  <div class="pagination">
+      <button class="pagination-arr-btn prev-btn <%= dir %> <%= currentPage - 1 < 1 ? 'disabled' : ''%>">
+          <div class="arrow btn-arrow _icon-ico-arrow-short" data-page="<%= currentPage - 1 %>" data-count="<%= count %>"></div>
+      </button>
+      <div class="pages">
+          <% for(let i = 1; i <= countPage; i++) { %>
+              <button class="page-num <%= currentPage == i ? 'active' : ''%>" data-page="<%= i %>"><%= i %></button>
+          <% } %>
+          <% if(countPage > 8) {%>
+              <span class="dots">...</span>
+              <button class="page-num">18</button>
+          <% }%>
+      </div>
+      <button class="pagination-arr-btn next-btn <%= dir %> <%= currentPage == countPage ? 'disabled' : ''%>">
+          <div class="arrow btn-arrow _icon-ico-arrow-short" data-page="<%= Number(currentPage) + 1 %>" data-count="<%= count %>"></div>
+      </button>
+  </div>
+<% } %>

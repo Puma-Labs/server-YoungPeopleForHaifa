@@ -8,11 +8,11 @@
 
   <section class="future-events-section" dir=<%= dir %>>
     <div class="section-title">
-      <h2>Будущие события</h2>
+      <h2><%= __('translate-48')%></h2>
     </div>
     <div class="events-container <%= dir %>">
       <% upcomingEvents.map((event, i) => { %>
-        <a href="/events/<%= event.id %>">
+        <a href="/events/<%= event._id %>">
           <div class="event <%= (i === 0) ? 'event-1' : '' %>">
             <button class="options-menu _icon-ico-menu"></button>
             <div class="img-container <%= (!event.cover) ? 'empty' : '' %>">
@@ -30,7 +30,7 @@
 
   <section class="all-events-section" dir=<%= dir %>>
     <div class="section-title">
-      <h2>Все мероприятия</h2>
+      <h2><%= __('translate-49')%></h2>
       <button onclick="toggleCalendar()" class="calendar-btn" id="calendarToggle">
         <span class="_icon-ico-calendar"></span>
       </button>
@@ -39,7 +39,7 @@
       <div class="calendar-container" id="calendarMenu">
         <div class="top">
           <div class="title">
-            Дата события
+            <%= __('translate-50')%>
           </div>
           <span class="calendar-ico _icon-ico-calendar"></span>
         </div>
@@ -47,13 +47,13 @@
           <form id="datepickerForm">
             <div>
               <div class="input-wrapper <%= dir %>">
-                <label for="datepicker">Дата</label>
+                <label for="datepicker"><%= __('translate-51')%></label>
                 <input class="input" id="datepicker" placeholder="дд/мм/гггг" readonly>
               </div>
             </div>
             <div class="buttons">
-              <button type="button" id="resetButton">Сбросить</button>
-              <button type="submit">Выбрать</button>
+              <button type="button" id="resetButton"><%= __('translate-52')%></button>
+              <button type="submit"><%= __('translate-53')%></button>
             </div>
           </form>
         </div>
@@ -78,42 +78,61 @@
     calendarMenu.classList.toggle("active");
   }
 
+  function fetchEvents(page, selectedDate) {
+    let uri = `/events/json?page=${page}`;
 
-  let pageNumButtons = document.querySelectorAll('.page-num');
+    const url = new URL(location.href);
+    url.searchParams.set('page', page);
+    history.pushState(null, '', url);
 
-  function onPressPage(e) {
-      pageNumButtons.forEach((btn) => {
-          btn.classList.remove('active');
+    if (selectedDate) {
+      uri += `&selectedDate=${selectedDate}`;
+    }
+
+    const eventsContainer = document.getElementById("events-container");
+
+    fetch(uri)
+      .then(response => response.text())
+      .then((section) => {
+        eventsContainer.innerHTML = section;
+        initPagination();
       });
-
-      const page = e.target.dataset.page;
-      let uri = `/events/json?page=${page}`
-
-      const url = new URL(location.href);
-      url.searchParams.set('page', page);
-      history.pushState(null, '', url);
-
-      const selectedDate = new URL(document.URL).searchParams.get("date");
-      uri = selectedDate ? uri + `&selectedDate=${selectedDate}` : uri
-
-      const eventsContainer = document.getElementById("events-container");
-
-      fetch(uri)
-          .then(response => response.text())
-          .then((section) => {
-              eventsContainer.innerHTML = section
-              initPagination()
-          });
-
-      e.target.classList.add('active');
   }
 
- function initPagination() {
-      console.log('initPagination')
-      pageNumButtons = document.querySelectorAll('.page-num');
-      pageNumButtons.forEach((button) => {
-          button.addEventListener('click', onPressPage)
-      });
+  function onPressPage(e) {
+    const pageNumButtons = document.querySelectorAll('.page-num');
+    pageNumButtons.forEach((btn) => {
+      btn.classList.remove('active');
+    });
+
+    const page = e.target.dataset.page;
+
+    const selectedDate = new URL(document.URL).searchParams.get("date");
+    fetchEvents(page, selectedDate);
+
+    e.target.classList.add('active');
+  }
+
+  function onPressArrowPage(e) {
+    const page = e.target.dataset.page;
+    const countPage = Math.ceil(e.target.dataset.count / 9);
+
+    if (page > 0 && page <= countPage) {
+      const selectedDate = new URL(document.URL).searchParams.get("date");
+      fetchEvents(page, selectedDate);
+    }
+  }
+
+  function initPagination() {
+    const pageNumButtons = document.querySelectorAll('.page-num');
+    const pageArrowButtons = document.querySelectorAll('.pagination-arr-btn');
+
+    pageNumButtons.forEach((button) => {
+      button.addEventListener('click', onPressPage);
+    });
+    pageArrowButtons.forEach((button) => {
+      button.addEventListener('click', onPressArrowPage);
+    });
   }
 
   initPagination()
