@@ -14,7 +14,7 @@
     <div class="content">
       <div class="wrapper-left">
         <div class="info frame <%= dir %>">
-          <div class="title">Будущее Хайфы</div>
+          <div class="title"><%= __('translate-12')%></div>
           <div class="description <%= dir %>">
             <img class="bg-shape" src="/static/assets/images/bg-star.png" alt=""/>
             <img class="avatar" src="/static/assets/images/avatar8.png" alt=""/>
@@ -22,10 +22,10 @@
               <div class="corner <%= dir === 'ltr' ? 'left' : 'right' %>" ></div>
               <div class="text-container <%= dir === 'ltr' ? 'left' : 'right' %>" >
                 <p>
-                    <%= __('translate-1')%>
+                    <%= __('translate-13')%>
                 </p>
                 <p>
-                    <%= __('translate-2')%>
+                    <%= __('translate-14')%>
                 </p>
               </div>
             </div>
@@ -33,7 +33,7 @@
         </div>
         <div class="support frame <%= dir %>">
           <button class="slide-btn-big join-btn <%= dir %>">
-            <span class="button-text">Поддержать Хайфу</span>
+            <span class="button-text"><%= __('translate-15')%></span>
             <span class="circle" aria-hidden="true">
               <span class="arrow _icon-ico-arrow-short"></span>
             </span>
@@ -64,7 +64,7 @@
 
   <section class="how-section" dir=<%= dir %>>
     <div class="section-title">
-      <h2>Как?</h2>
+      <h2><%= __('translate-16')%></h2>
     </div>
     <div class="description <%= dir %>">
       <img class="bg-shape" src="/static/assets/images/bg-shape.png" alt=""/>
@@ -72,7 +72,7 @@
       <div class="bubble">
         <div class="text-container <%= dir === 'ltr' ? 'right' : 'left' %>" >
           <p>
-            Мы занимаемся социальными проектами по развитию города и помогаем молодёжи реализовать себя в профессиональных, творческих, спортивных программах:
+            <%= __('translate-17')%>
           </p>
         </div>
         <div class="corner <%= dir === 'ltr' ? 'right' : 'left' %>" ></div>
@@ -84,7 +84,7 @@
           <img src="/static/assets/images/illustration1.png" alt=""/>
         </div>
         <div class="card-text frame <%= dir %>">
-          <h4>Создание комфортной городской среды для жителей Хайфы</h4>
+          <h4><%= __('translate-18')%></h4>
         </div>
       </div>
       <div class="card">
@@ -92,7 +92,7 @@
           <img src="/static/assets/images/illustration2.png" alt=""/>
         </div>
         <div class="card-text frame <%= dir %>">
-          <h4>Обучающие курсы, лекции, мастер-классы</h4>
+          <h4><%= __('translate-19')%></h4>
         </div>
       </div>
       <div class="card">
@@ -100,7 +100,7 @@
           <img src="/static/assets/images/illustration3.png" alt=""/>
         </div>
         <div class="card-text frame <%= dir %>">
-          <h4>Встречи, поездки, праздники для новых друзей и впечатлений</h4>
+          <h4><%= __('translate-20')%></h4>
         </div>
       </div>
       <div class="card">
@@ -108,7 +108,7 @@
           <img src="/static/assets/images/illustration4.png" alt=""/>
         </div>
         <div class="card-text frame <%= dir %>">
-          <h4>Помощь в трудоустройстве и создании собственного дела</h4>
+          <h4><%= __('translate-21')%></h4>
         </div>
       </div>
     </div>
@@ -116,7 +116,7 @@
 
   <section class="reasons-section" dir=<%= dir %>>
     <div class="section-title">
-      <h2>Зачем мы это делаем?</h2>
+      <h2><%= __('translate-22')%></h2>
     </div>
     <div class="wrapper <%= dir %>">
       <div class="left-wrapper">
@@ -125,10 +125,10 @@
           <div class="corner <%= dir === 'ltr' ? 'left' : 'right' %>" ></div>
           <div class="text-container <%= dir === 'ltr' ? 'left' : 'right' %>" >
             <p>
-              Мы хотим жить в гостеприимном, современном и полном возможностей городе. И убеждены в том, что сделать Хайфу именно такой — в наших силах.
+              <%= __('translate-23')%>
             </p>
             <p>
-              Мы ждём тех, кто готов и не боится воплощать свои идеи, работать в команде и добиваться того, что кажется невозможным!
+              <%= __('translate-24')%>
             </p>
           </div>
         </div>
@@ -139,13 +139,13 @@
           <div class="bubble">
             <div class="text-container <%= dir === 'ltr' ? 'right' : 'left' %>" >
               <p>
-                На этом сайте вы можете найти полную информацию о наших проектах и мероприятиях, а также узнать, как присоединиться к нашей команде.
+                <%= __('translate-25')%>
               </p>
             </div>
             <div class="corner <%= dir === 'ltr' ? 'right' : 'left' %>" ></div>
           </div>
           <button class="slide-btn-big join-btn <%= dir %>">
-            <span class="button-text">Присоединиться к нам</span>
+            <span class="button-text"><%= __('translate-26')%></span>
             <span class="circle" aria-hidden="true">
               <span class="arrow _icon-ico-arrow-short"></span>
             </span>
@@ -158,10 +158,10 @@
 
   <section class="events-section" dir=<%= dir %>>
     <div class="section-title <%= dir %>">
-      <h2>События</h2>
+      <h2><%= __('translate-27')%></h2>
       <a href="/events">
         <button class="show-btn <%= dir %>">
-          Показать все
+          <%= __('translate-28')%>
           <div class="btn-arrow _icon-ico-arrow-short"></div>
         </button>
       </a>
@@ -191,10 +191,10 @@
 
   <section class="donation-section" id="connect-link" dir=<%= dir %>>
     <div class="section-title">
-      <h2>Пожертвования</h2>
+      <h2><%= __('translate-29')%></h2>
     </div>
     <div class="top frame <%= dir %>">
-      <div class="content-title">Наши реквизиты</div>
+      <div class="content-title"><%= __('translate-30')%></div>
       <button class="options-menu-big">
         <span class="btn-dots"></span>
       </button>
@@ -203,28 +203,28 @@
       <div class="payment-details frame <%= dir %>">
         <div class="form">
           <div class="input-wrapper <%= dir %>">
-            <label for="bank-name">Название банка</label>
+            <label for="bank-name"><%= __('translate-31')%></label>
             <input class="input" id="bank-name" value="‏בנק הפועלים" readonly>
             <button class="copy-button">
               <span class=" _icon-ico-copy"></span>
             </button>
           </div>
           <div class="input-wrapper <%= dir %>">
-            <label for="bank-name">Swift код</label>
+            <label for="bank-name"><%= __('translate-32')%></label>
             <input class="input" id="bank-name" value="ALFARUMM" readonly>
             <button class="copy-button">
               <span class=" _icon-ico-copy"></span>
             </button>
           </div>
           <div class="input-wrapper <%= dir %>">
-            <label for="bank-name">IBAN</label>
+            <label for="bank-name"><%= __('translate-33')%></label>
             <input class="input" id="bank-name" value="0000000000828132111000333" readonly>
             <button class="copy-button">
               <span class=" _icon-ico-copy"></span>
             </button>
           </div>
           <div class="input-wrapper <%= dir %>">
-            <label for="bank-name">ФИО получателя</label>
+            <label for="bank-name"><%= __('translate-34')%></label>
             <input class="input" id="bank-name" value="Victor Coy" readonly>
             <button class="copy-button">
               <span class=" _icon-ico-copy"></span>
@@ -238,10 +238,10 @@
         <div class="bubble">
           <div class="text-container <%= dir === 'ltr' ? 'right' : 'left' %>" >
             <p>
-              Мы рады, что вы заинтересовались поддержкой нашей НКО. Наша организация работает над различными проектами, направленными на помощь людям, организации Эвентов и улучшения уровня жизни в Хайфе.
+              <%= __('translate-35')%>
             </p>
             <p>
-              Вы можете сделать свой вклад через наш сайт, выбрав удобный для вас способ оплаты. Мы также приветствуем любую другую форму поддержки, такую как волонтерская работа или распространение информации о нашей деятельности.
+              <%= __('translate-36')%>
             </p>
           </div>
           <div class="corner <%= dir === 'ltr' ? 'right' : 'left' %>" ></div>
@@ -262,7 +262,7 @@
     <div class="bottom">
       <div class="transaction frame <%= dir %>">
         <button class="slide-btn-big join-btn <%= dir %>">
-          <span class="button-text">Банковский перевод</span>
+          <span class="button-text"><%= __('translate-37')%></span>
           <span class="circle" aria-hidden="true">
             <span class="arrow _icon-ico-arrow-short"></span>
           </span>
@@ -270,7 +270,7 @@
       </div>
       <div class="join frame <%= dir %>">
         <button class="slide-btn-big join-btn <%= dir %>">
-          <span class="button-text">Присоединиться к нам</span>
+          <span class="button-text"><%= __('translate-38')%></span>
           <span class="circle" aria-hidden="true">
             <span class="arrow _icon-ico-arrow-short"></span>
           </span>
@@ -281,39 +281,39 @@
 
   <section class="important-facts-section" dir=<%= dir %>>
     <div class="section-title">
-      <h2>Почему это важно?</h2>
+      <h2><%= __('translate-39')%></h2>
     </div>
     <div class="facts-container">
       <div class="fact">
         <div class="fact-text text-regular">
-          Тысяч молодых семей покинуло Хайфу в 2022 году
+          <%= __('translate-40')%>
         </div>
         <div class="fact-number">
-          12
+          <%= __('translate-41')%>
         </div>
       </div>
       <div class="fact">
         <div class="fact-text text-regular">
-          Место по оттоку молодежи из города
+          <%= __('translate-42')%>
         </div>
         <div class="fact-number">
-          3
+          <%= __('translate-43')%>
         </div>
       </div>
       <div class="fact">
         <div class="fact-text text-regular">
-          Тысяч студентов после выпуска ищут работу в центре
+          <%= __('translate-44')%>
         </div>
         <div class="fact-number">
-          >50
+          <%= __('translate-45')%>
         </div>
       </div>
       <div class="fact">
         <div class="fact-text text-regular">
-          Израильского бизнеса находится в Хайфе
+          <%= __('translate-46')%>
         </div>
         <div class="fact-number">
-          3,6%
+          <%= __('translate-47')%>
         </div>
       </div>
     </div>

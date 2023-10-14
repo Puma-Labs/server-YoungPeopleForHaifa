@@ -57,7 +57,6 @@ class MainController {
     const upcomingEvents = await EventService.getUpcomingEvents(4);
     const lang = MainController.setLanguageCookie(req, res);
 
-
    console.log('count', count)
 
     res.render("events", {
