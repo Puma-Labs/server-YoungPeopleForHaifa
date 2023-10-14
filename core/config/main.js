@@ -27,7 +27,7 @@ module.exports = {
             'https://young4haifa.co.il',
         ],
         translate: {
-            locales: ['ru', 'he'],
+            locales: ['ru', 'he', 'en'],
             directory: path.join(__dirname, 'locales'),
             defaultLocale: 'ru',
             retryInDefaultLocale: false,
@@ -63,7 +63,7 @@ module.exports = {
             'https://young4haifa.co.il',
         ],
         translate: {
-            locales: ['ru', 'he'],
+            locales: ['ru', 'he', 'en'],
             directory: path.join(__dirname, 'locales'),
             defaultLocale: 'ru',
             retryInDefaultLocale: false,

@@ -14,26 +14,27 @@
     <div class="content">
       <div class="wrapper-left">
         <div class="info frame <%= dir %>">
-          <div class="title">Будущее Хайфы</div>
+          <div class="title"><%= __('section.support-for-future.heading')%></div>
           <div class="description <%= dir %>">
             <img class="bg-shape" src="/static/assets/images/bg-star.png" alt=""/>
             <img class="avatar" src="/static/assets/images/avatar8.png" alt=""/>
             <div class="bubble">
               <div class="corner <%= dir === 'ltr' ? 'left' : 'right' %>" ></div>
               <div class="text-container <%= dir === 'ltr' ? 'left' : 'right' %>" >
-                <p>
-                    <%= __('translate-1')%>
-                </p>
-                <p>
-                    <%= __('translate-2')%>
-                </p>
+                <% __('section.support-for-future.desc').forEach(function(desc){ %>
+                  <p>
+                    <%= desc %>
+                  </p>
+                <% }); %>
               </div>
             </div>
           </div>
         </div>
         <div class="support frame <%= dir %>">
           <button class="slide-btn-big join-btn <%= dir %>">
-            <span class="button-text">Поддержать Хайфу</span>
+            <span class="button-text">
+              <%= __('section.support-for-future.cta')%>
+            </span>
             <span class="circle" aria-hidden="true">
               <span class="arrow _icon-ico-arrow-short"></span>
             </span>
@@ -64,7 +65,9 @@
 
   <section class="how-section" dir=<%= dir %>>
     <div class="section-title">
-      <h2>Как?</h2>
+      <h2>
+        <%= __('section.how-we-help.heading')%>
+      </h2>
     </div>
     <div class="description <%= dir %>">
       <img class="bg-shape" src="/static/assets/images/bg-shape.png" alt=""/>
@@ -72,51 +75,33 @@
       <div class="bubble">
         <div class="text-container <%= dir === 'ltr' ? 'right' : 'left' %>" >
           <p>
-            Мы занимаемся социальными проектами по развитию города и помогаем молодёжи реализовать себя в профессиональных, творческих, спортивных программах:
+            <%= __('section.how-we-help.desc')%>
           </p>
         </div>
         <div class="corner <%= dir === 'ltr' ? 'right' : 'left' %>" ></div>
       </div>
     </div>
     <div class="cards">
-      <div class="card">
-        <div class="card-img frame <%= dir %>">
-          <img src="/static/assets/images/illustration1.png" alt=""/>
+      <% __('section.how-we-help.event-types').forEach(function(type, t){ %>
+        <div class="card">
+          <div class="card-img frame <%= dir %>">
+            <img src="/static/assets/images/illustration<%= t+1 %>.png" alt="<%= type %>" />
+          </div>
+          <div class="card-text frame <%= dir %>">
+            <h4>
+              <%= type %>
+            </h4>
+          </div>
         </div>
-        <div class="card-text frame <%= dir %>">
-          <h4>Создание комфортной городской среды для жителей Хайфы</h4>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-img frame <%= dir %>">
-          <img src="/static/assets/images/illustration2.png" alt=""/>
-        </div>
-        <div class="card-text frame <%= dir %>">
-          <h4>Обучающие курсы, лекции, мастер-классы</h4>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-img frame <%= dir %>">
-          <img src="/static/assets/images/illustration3.png" alt=""/>
-        </div>
-        <div class="card-text frame <%= dir %>">
-          <h4>Встречи, поездки, праздники для новых друзей и впечатлений</h4>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-img frame <%= dir %>">
-          <img src="/static/assets/images/illustration4.png" alt=""/>
-        </div>
-        <div class="card-text frame <%= dir %>">
-          <h4>Помощь в трудоустройстве и создании собственного дела</h4>
-        </div>
-      </div>
+      <% }); %>
     </div>
   </section>
 
   <section class="reasons-section" dir=<%= dir %>>
     <div class="section-title">
-      <h2>Зачем мы это делаем?</h2>
+      <h2>
+        <%= __('section.why-we-help.heading')%>
+      </h2>
     </div>
     <div class="wrapper <%= dir %>">
       <div class="left-wrapper">
@@ -124,12 +109,11 @@
         <div class="bubble">
           <div class="corner <%= dir === 'ltr' ? 'left' : 'right' %>" ></div>
           <div class="text-container <%= dir === 'ltr' ? 'left' : 'right' %>" >
-            <p>
-              Мы хотим жить в гостеприимном, современном и полном возможностей городе. И убеждены в том, что сделать Хайфу именно такой — в наших силах.
-            </p>
-            <p>
-              Мы ждём тех, кто готов и не боится воплощать свои идеи, работать в команде и добиваться того, что кажется невозможным!
-            </p>
+            <% __('section.why-we-help.desc1').forEach(function(desc){ %>
+              <p>
+                <%= desc %>
+              </p>
+            <% }); %>
           </div>
         </div>
 
@@ -138,14 +122,18 @@
         <div class="text">
           <div class="bubble">
             <div class="text-container <%= dir === 'ltr' ? 'right' : 'left' %>" >
-              <p>
-                На этом сайте вы можете найти полную информацию о наших проектах и мероприятиях, а также узнать, как присоединиться к нашей команде.
-              </p>
+              <% __('section.why-we-help.desc2').forEach(function(desc){ %>
+                <p>
+                  <%= desc %>
+                </p>
+              <% }); %>
             </div>
             <div class="corner <%= dir === 'ltr' ? 'right' : 'left' %>" ></div>
           </div>
           <button class="slide-btn-big join-btn <%= dir %>">
-            <span class="button-text">Присоединиться к нам</span>
+            <span class="button-text">
+              <%= __('section.why-we-help.cta') %>
+            </span>
             <span class="circle" aria-hidden="true">
               <span class="arrow _icon-ico-arrow-short"></span>
             </span>
@@ -158,10 +146,12 @@
 
   <section class="events-section" dir=<%= dir %>>
     <div class="section-title <%= dir %>">
-      <h2>События</h2>
+      <h2>
+        <%= __('section.events.heading') %>
+      </h2>
       <a href="/events">
         <button class="show-btn <%= dir %>">
-          Показать все
+          <%= __('section.events.show-all') %>
           <div class="btn-arrow _icon-ico-arrow-short"></div>
         </button>
       </a>
@@ -191,10 +181,14 @@
 
   <section class="donation-section" id="connect-link" dir=<%= dir %>>
     <div class="section-title">
-      <h2>Пожертвования</h2>
+      <h2>
+        <%= __('section.charity.heading') %>
+      </h2>
     </div>
     <div class="top frame <%= dir %>">
-      <div class="content-title">Наши реквизиты</div>
+      <div class="content-title">
+        <%= __('section.charity.requisites.heading') %>
+      </div>
       <button class="options-menu-big">
         <span class="btn-dots"></span>
       </button>
@@ -203,29 +197,37 @@
       <div class="payment-details frame <%= dir %>">
         <div class="form">
           <div class="input-wrapper <%= dir %>">
-            <label for="bank-name">Название банка</label>
+            <label for="bank-name">
+              <%= __('section.charity.requisites.bank-name') %>
+            </label>
             <input class="input" id="bank-name" value="‏בנק הפועלים" readonly>
             <button class="copy-button">
               <span class=" _icon-ico-copy"></span>
             </button>
           </div>
           <div class="input-wrapper <%= dir %>">
-            <label for="bank-name">Swift код</label>
-            <input class="input" id="bank-name" value="ALFARUMM" readonly>
+            <label for="swift">
+              <%= __('section.charity.requisites.swift-code') %>
+            </label>
+            <input class="input" id="swift" value="ALFARUMM" readonly>
             <button class="copy-button">
               <span class=" _icon-ico-copy"></span>
             </button>
           </div>
           <div class="input-wrapper <%= dir %>">
-            <label for="bank-name">IBAN</label>
-            <input class="input" id="bank-name" value="0000000000828132111000333" readonly>
+            <label for="iban">
+              <%= __('section.charity.requisites.iban') %>
+            </label>
+            <input class="input" id="iban" value="0000000000828132111000333" readonly>
             <button class="copy-button">
               <span class=" _icon-ico-copy"></span>
             </button>
           </div>
           <div class="input-wrapper <%= dir %>">
-            <label for="bank-name">ФИО получателя</label>
-            <input class="input" id="bank-name" value="Victor Coy" readonly>
+            <label for="name">
+              <%= __('section.charity.requisites.name') %>
+            </label>
+            <input class="input" id="name" value="Victor Coy" readonly>
             <button class="copy-button">
               <span class=" _icon-ico-copy"></span>
             </button>
@@ -237,12 +239,11 @@
         <img class="avatar" src="/static/assets/images/avatar-vector4.png" alt=""/>
         <div class="bubble">
           <div class="text-container <%= dir === 'ltr' ? 'right' : 'left' %>" >
-            <p>
-              Мы рады, что вы заинтересовались поддержкой нашей НКО. Наша организация работает над различными проектами, направленными на помощь людям, организации Эвентов и улучшения уровня жизни в Хайфе.
-            </p>
-            <p>
-              Вы можете сделать свой вклад через наш сайт, выбрав удобный для вас способ оплаты. Мы также приветствуем любую другую форму поддержки, такую как волонтерская работа или распространение информации о нашей деятельности.
-            </p>
+            <% __('section.charity.desc').forEach(function(desc){ %>
+              <p>
+                <%= desc %>
+              </p>
+            <% }); %>
           </div>
           <div class="corner <%= dir === 'ltr' ? 'right' : 'left' %>" ></div>
         </div>
@@ -262,7 +263,9 @@
     <div class="bottom">
       <div class="transaction frame <%= dir %>">
         <button class="slide-btn-big join-btn <%= dir %>">
-          <span class="button-text">Банковский перевод</span>
+          <span class="button-text">
+            <%= __('section.charity.cta-bant-transfer') %>
+          </span>
           <span class="circle" aria-hidden="true">
             <span class="arrow _icon-ico-arrow-short"></span>
           </span>
@@ -270,7 +273,9 @@
       </div>
       <div class="join frame <%= dir %>">
         <button class="slide-btn-big join-btn <%= dir %>">
-          <span class="button-text">Присоединиться к нам</span>
+          <span class="button-text">
+            <%= __('section.charity.cta-join-us') %>
+          </span>
           <span class="circle" aria-hidden="true">
             <span class="arrow _icon-ico-arrow-short"></span>
           </span>
@@ -281,12 +286,14 @@
 
   <section class="important-facts-section" dir=<%= dir %>>
     <div class="section-title">
-      <h2>Почему это важно?</h2>
+      <h2>
+        <%= __('section.why-it-is-important.heading') %>
+      </h2>
     </div>
     <div class="facts-container">
       <div class="fact">
         <div class="fact-text text-regular">
-          Тысяч молодых семей покинуло Хайфу в 2022 году
+          <%= __('section.why-it-is-important.families-leave') %>
         </div>
         <div class="fact-number">
           12
@@ -294,7 +301,7 @@
       </div>
       <div class="fact">
         <div class="fact-text text-regular">
-          Место по оттоку молодежи из города
+          <%= __('section.why-it-is-important.young-specs-leave-place') %>
         </div>
         <div class="fact-number">
           3
@@ -302,7 +309,7 @@
       </div>
       <div class="fact">
         <div class="fact-text text-regular">
-          Тысяч студентов после выпуска ищут работу в центре
+          <%= __('section.why-it-is-important.students-in-center') %>
         </div>
         <div class="fact-number">
           >50
@@ -310,7 +317,7 @@
       </div>
       <div class="fact">
         <div class="fact-text text-regular">
-          Израильского бизнеса находится в Хайфе
+          <%= __('section.why-it-is-important.business-in-haifa') %>
         </div>
         <div class="fact-number">
           3,6%

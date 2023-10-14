@@ -134,4 +134,4 @@ dist
 
 .idea
 .DS_Store
-/core/config/locales/
+# /core/config/locales/

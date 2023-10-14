@@ -8,7 +8,9 @@
 
   <section class="future-events-section" dir=<%= dir %>>
     <div class="section-title">
-      <h2>Будущие события</h2>
+      <h2>
+        <%= __('section.future-events.heading') %>
+      </h2>
     </div>
     <div class="events-container <%= dir %>">
       <% upcomingEvents.map((event, i) => { %>
@@ -30,7 +32,9 @@
 
   <section class="all-events-section" dir=<%= dir %>>
     <div class="section-title">
-      <h2>Все мероприятия</h2>
+      <h2>
+        <%= __('section.all-events.heading') %>
+      </h2>
       <button onclick="toggleCalendar()" class="calendar-btn" id="calendarToggle">
         <span class="_icon-ico-calendar"></span>
       </button>
@@ -39,7 +43,7 @@
       <div class="calendar-container" id="calendarMenu">
         <div class="top">
           <div class="title">
-            Дата события
+            <%= __('section.all-events.date') %>
           </div>
           <span class="calendar-ico _icon-ico-calendar"></span>
         </div>
@@ -47,13 +51,19 @@
           <form id="datepickerForm">
             <div>
               <div class="input-wrapper <%= dir %>">
-                <label for="datepicker">Дата</label>
+                <label for="datepicker">
+                  <%= __('section.all-events.input-date') %>
+                </label>
                 <input class="input" id="datepicker" placeholder="дд/мм/гггг" readonly>
               </div>
             </div>
             <div class="buttons">
-              <button type="button" id="resetButton">Сбросить</button>
-              <button type="submit">Выбрать</button>
+              <button type="button" id="resetButton">
+                <%= __('section.all-events.reset') %>
+              </button>
+              <button type="submit">
+                <%= __('section.all-events.submit') %>
+              </button>
             </div>
           </form>
         </div>

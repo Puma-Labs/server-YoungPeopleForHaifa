@@ -1,0 +1,64 @@
+{
+    "general.org-name": "צעירים למען חיפה",
+    "nav.link.join": "להצטרף",
+    "nav.link.events": "אירועים",
+    "nav.link.charity": "תרומות",
+    "section.support-for-future.heading": "עתיד חיפה",
+    "section.support-for-future.desc": [
+        "אנחנו עמותת 'צעירים למען חיפה', שנוצרה על ידי מתנדבים למטרת פיתוח העיר ועזרה לאנשים.",
+        "מטרתנו היא ליצור את התנאים הטובים ביותר למימוש עצמיות של הצעירים: החשמלת לימודים איכותית ועד יצירת עסק בעצמם."
+    ],
+    "section.support-for-future.cta": "לתמוך בחיפה",
+    "section.how-we-help.heading": "איך",
+    "section.how-we-help.desc": "אנו עוסקים בפרויקטים חברתיים לקידום העיר ובעזרה לצעירים לממש את עצמם בתחומים מקצועיים, יצירתיים וספורטיים:",
+    "section.how-we-help.event-types": [
+        "יצירת סביבת עירנות נעימה עבור תושבי חיפה",
+        "קורסים הדרכות, ומסדנאות למידה",
+        "פגישות, טיולים, חגים עבור חברים חדשים וחוויות",
+        "תמיכה בגיוס עבודה ובהקמת עסק משלך"
+    ],
+    "section.why-we-help.heading": "למה אנחנו עושים את זה?",
+    "section.why-we-help.desc1": [
+        "אנחנו רוצים לחיות בעיר מסבירת פנים, מודרנית ופתוחה לאפשרויות. אנחנו מאמינים שנכול ליצור את חיפה כזו בדיוק.",
+        "אנחנו מחכים לאלו שמוכנים ולא פוחדים להגשים את הרעיונות שלהם, לעבוד בצוות ולהשיג את מה שנראה בלתי אפשרי!"
+    ],
+    "section.why-we-help.desc2": [
+        "באתר הזה, תוכלו למצוא מידע מלא אודות הפרויקטים והאירועים שלנו וגם לגלות איך ניתן להצטרף עלינו."
+    ],
+    "section.why-we-help.cta": "הצטרף אלינו",
+    "section.events.heading": "אירועים",
+    "section.events.show-all": "הצג הכל",
+    "section.charity.heading": "תרומות",
+    "section.charity.requisites.heading": "הפרטים שלנו",
+    "section.charity.requisites.bank-name": "שם הבנק",
+    "section.charity.requisites.swift-code": "SWIFT",
+    "section.charity.requisites.iban": "IBAN",
+    "section.charity.requisites.name": "שם מלא של המקבל",
+    "section.charity.desc": [
+        "אנחנו שמחים שהתעניינתם לתמוך בעמותה שלנו. הארגון שלנו פועל על מגוון פרויקטים הממוקדים על סיוע לאנשים, ארגון אירועים ושיפור איכות החיים בחיפה.",
+        "אתם יכולים לתמוך בנו דרך האתר שלנו ולבחור את אמצעי התשלום שנוח לכם. אנו גם מברכים כל סוג של תמיכה נוספת, כמו התנדבות או הפצת מידע אודות פעילותנו."
+    ],
+    "section.charity.cta-bant-transfer": "העברה בנקאית",
+    "section.charity.cta-join-us": "הצטרפו אלינו",
+    "section.why-it-is-important.heading": "למה זה חשוב?",
+    "section.why-it-is-important.families-leave": "אלפי משפחות צעירות עזבו את חיפה בשנת 2022",
+    "section.why-it-is-important.young-specs-leave-place": "מיקום לפי התעפות נוער מהעיר",
+    "section.why-it-is-important.students-in-center": "אלפי סטודנטים לאחר הסיום מחפשים עבודה במרכז הארץ",
+    "section.why-it-is-important.business-in-haifa": "עסקים ישראליים ממוקמים בחיפה",
+    "section.pages.main": "דף הבית",
+    "section.pages.events": "אירועים",
+    "section.pages.blog": "בלוג",
+    "section.pages.shop": "חנות",
+    "section.pages.join": "הצטרף",
+    "section.future-events.heading": "אירועים עתידיים",
+    "section.all-events.heading": "כל האירועים",
+    "section.all-events.date": "תאריך אירוע",
+    "section.all-events.input-date": "תאריך",
+    "section.all-events.reset": "לאפס",
+    "section.all-events.submit": "בחר",
+    "section.other-events.heading": "כל האירועים",
+    "section.other-events.show-all": "הצג הכל",
+    "section.footer.links.policy": "מדיניות פרטיות",
+    "section.footer.links.personal": "עיבוד נתונים אישיים",
+    "section.footer.links.cookie": "Cookie"
+}

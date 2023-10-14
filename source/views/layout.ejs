@@ -28,7 +28,7 @@
           <div class="menu-mobile">
             <a href="/" class="logo">
               <img src="/static/assets/images/logo.png" alt="logo" />
-              Young people for Haifa
+              <%= __('general.org-name')%>
             </a>
             <div class="button">
               <div class="burger-btn" id="burgerToggle">
@@ -41,31 +41,33 @@
             <li>
               <a href="/" class="nav-item logo" style="padding-left: 0">
                 <img src="/static/assets/images/logo.png" alt="logo" />
-                Young people for Haifa
+                <%= __('general.org-name')%>
               </a>
             </li>
               <li class="large">
                 <div class="nav-item languages">
-                  <button onclick="setLang('ru')" class="<%= (dir === 'ltr') ? 'btn-selected' : '' %>">RUS</button>
+                  <button onclick="setLang('ru')" class="<%= (lang === 'ru') ? 'btn-selected' : '' %>">RUS</button>
                   /
-                  <button onclick="setLang('he')" class="<%= (dir === 'rtl') ? 'btn-selected' : '' %>">HEB</button>
+                  <button onclick="setLang('he')" class="<%= (lang === 'he') ? 'btn-selected' : '' %>">HEB</button>
+                  /
+                  <button onclick="setLang('en')" class="<%= (lang === 'en') ? 'btn-selected' : '' %>">EN</button>
                 </div>
               </li>
               <li>
                 <a href="" class="nav-item">
-                  Присоединиться
+                  <%= __('nav.link.join')%>
                   <span class="arrow _icon-ico-arrow"></span>
                 </a>
               </li>
               <li>
                 <a href="/events" class="nav-item">
-                  События
+                  <%= __('nav.link.events')%>
                   <span class="arrow _icon-ico-arrow"></span>
                 </a>
               </li>
               <li>
                 <a href="/#connect-link" class="nav-item">
-                  Пожертвования
+                  <%= __('nav.link.charity')%>
                   <span class="arrow _icon-ico-arrow"></span>
                 </a>
               </li>
@@ -89,31 +91,31 @@
               <ul>
                 <li>
                   <a href="/" class="menu-item">
-                    Главная
+                    <%= __('section.pages.main')%>
                     <div class="btn-arrow _icon-ico-arrow"></div>
                   </a>
                 </li>
                 <li>
                   <a href="/events" class="menu-item">
-                    События
+                    <%= __('section.pages.events')%>
                     <div class="btn-arrow _icon-ico-arrow"></div>
                   </a>
                 </li>
                 <li>
                   <a href="/" class="menu-item disabled">
-                    Блог (скоро)
+                    <%= __('section.pages.blog')%>
                     <div class="btn-arrow _icon-ico-arrow"></div>
                   </a>
                 </li>
                 <li>
                   <a href="/" class="menu-item disabled">
-                    Магазин (скоро)
+                    <%= __('section.pages.shop')%>
                     <div class="btn-arrow _icon-ico-arrow"></div>
                   </a>
                 </li>
                 <li>
                   <a href="/" class="menu-item">
-                    Присоединиться
+                    <%= __('section.pages.join')%>
                     <div class="btn-arrow _icon-ico-arrow"></div>
                   </a>
                 </li>
@@ -125,15 +127,15 @@
         <div class="bottom-menu">
           <div class="menu">
             <a href="/" class="menu-item">
-              Политика конфиденциальности
+              <%= __('section.footer.links.policy')%>
               <span class="arrow _icon-ico-arrow"></span>
             </a>
             <a href="/" class="menu-item">
-              Обработка персональных данных
+              <%= __('section.footer.links.personal')%>
               <span class="arrow _icon-ico-arrow"></span>
             </a>
             <a href="/" class="menu-item">
-              Coockie
+              <%= __('section.footer.links.cookie')%>
               <span class="arrow _icon-ico-arrow"></span>
             </a>
           </div>
