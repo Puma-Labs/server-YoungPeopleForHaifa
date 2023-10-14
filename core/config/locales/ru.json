@@ -59,11 +59,18 @@
 	"section.pages.shop": "Магазин (скоро)",
 	"section.pages.join": "Присоединиться",
 
+	"section.future-events.heading": "Будущие события",
+
+	"section.all-events.heading": "Все мероприятия",
+	"section.all-events.date": "Дата события",
+	"section.all-events.input-date": "Дата",
+	"section.all-events.reset": "Сбросить",
+	"section.all-events.submit": "Выбрать",
+
+	"section.other-events.heading": "Все мероприятия",
+	"section.other-events.show-all": "Показать все",
+	
 	"section.footer.links.policy": "Политика конфиденциальности",
 	"section.footer.links.personal": "Обработка персональных данных",
-	"section.footer.links.cookie": "Cookie",
-
-
-	"translate-1": "translate-1",
-	"translate-2": "translate-2"
+	"section.footer.links.cookie": "Cookie"
 }
