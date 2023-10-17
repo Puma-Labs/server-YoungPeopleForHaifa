@@ -1,4 +1,4 @@
-<% const dir=lang==="he" ? "rtl" : "ltr"; const qr=data || []; const emptyCover="/static/assets/images/preview-empty.png" %>
+<% const dir = lang ==="he" ? "rtl" : "ltr"; const qr=data || []; const emptyCover="/static/assets/images/preview-empty.png" %>
 
   <main>
     <section class="event-section" dir=<%=dir %>>
@@ -14,7 +14,9 @@
         <%- data.content %>
         <% if(data.sheetURL){ %>
           <div class="content-card">
-            <iframe src="<%= data.sheetURL %>" frameborder="0"></iframe>
+            <!-- SECURITY FIX NEEDED -->
+            <%- data.sheetURL %>
+            <!-- <iframe src="<%= data.sheetURL %>" frameborder="0"></iframe> -->
           </div>
         <% } %>
       </div>

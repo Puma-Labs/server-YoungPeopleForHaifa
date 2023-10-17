@@ -1,7 +1,7 @@
 'use strict'
 
 const path = require('path')
-const { writeFileSync } = require('fs')
+const { writeFile, unlink } = require('fs')
 const qrImageGen = require('node-qr-image');
 const QRService = require('../../service/qr-service')
 
@@ -28,14 +28,13 @@ class QRController {
         const dataCreate = req.body
         const newQR = await QRService.create(dataCreate) // await QRService.create(dataCreate) // {_id: Math.random().toString(32)}
         const qrId = newQR._id
-        const HOST = 'http://localhost:5007'
-        const url = `${HOST}/images/qr/${qrId}`
+        const url = `${process.env.SERVER_HOST}/images/qr/${qrId}`
         const svg = qrImageGen.imageSync(url, { type: 'svg' });
-        newQR.svgURL = `${HOST}/images/qr/${newQR._id}.svg`
-        const newQRUpdate = await QRService.update(newQR)
-        writeFileSync(path.resolve(__dirname, `../../../public/images/qr/${newQR._id}.svg`), svg)
 
-        console.log(newQRUpdate);
+        writeFile(path.resolve(__dirname, `../../../public/images/qr/${newQR._id}.svg`), svg)
+        newQR.svgURL = `${process.env.SERVER_HOST}/images/qr/${newQR._id}.svg`
+
+        const newQRUpdate = await QRService.update(newQR)
 
         res.json(newQRUpdate)
     }
@@ -43,6 +42,7 @@ class QRController {
     async delete(req, res) {
         const {id} = req.params
         const dataDelete = await QRService.remove(id)
+        unlink(path.resolve(__dirname, `../../../public/images/qr/${id}.svg`))
         res.json(dataDelete)
     }
 }

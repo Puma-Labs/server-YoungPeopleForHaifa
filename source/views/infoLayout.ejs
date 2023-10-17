@@ -13,11 +13,21 @@
       <title>
         <%= __CONFIG.site.name %>
       </title>
+      <style>
+        .info-layout-nav {
+          padding-top: 16px;
+        }
+
+        .content-card iframe {
+          width: 100%;
+          height: 200px;
+        }
+      </style>
     </head>
 
     <body>
       <header class="container-fluid" dir=<%=dir %>>
-        <nav>
+        <nav class="info-layout-nav">
           <div class="menu-mobile">
             <a href="/" class="logo">
               <img src="/static/assets/images/logo.png" alt="logo" />
