@@ -7,6 +7,7 @@ const __middlewareAdmin = require("../../../core/middlewares/admin-middleware");
 
 router.use("/user", require("./section/admin"));
 router.use("/events", __middlewareAdmin, require("./section/events"));
+router.use("/qr", __middlewareAdmin, require("./section/qr"));
 
 router.get("/*", __asyncHandler(__APIE.notFound));
 

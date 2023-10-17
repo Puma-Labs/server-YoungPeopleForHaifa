@@ -1,0 +1,25 @@
+<% const dir=lang==="he" ? "rtl" : "ltr"; const qr=data || []; const emptyCover="/static/assets/images/preview-empty.png" %>
+
+  <main>
+    <section class="event-section" dir=<%=dir %>>
+      <div class="top frame <%= dir %>">
+        <div class="content-title">
+          <%= data.title %>
+        </div>
+        <button class="options-menu-big">
+          <span class="btn-dots"></span>
+        </button>
+      </div>
+      <div class="content frame <%= dir %>">
+        <%- data.content %>
+        <% if(data.sheetURL){ %>
+          <div class="content-card">
+            <iframe src="<%= data.sheetURL %>" frameborder="0"></iframe>
+          </div>
+        <% } %>
+      </div>
+    </section>
+
+  </main>
+
+  <%- contentFor('scripts') %>

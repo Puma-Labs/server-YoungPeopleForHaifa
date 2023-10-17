@@ -1,0 +1,23 @@
+<% const dir=lang==="he" ? "rtl" : "ltr"; const qr=data || []; %>
+
+  <main>
+    <section class="event-section" dir=<%=dir %>>
+      <div class="top frame <%= dir %>">
+        <div class="content-title">
+          <%= qr.title %>
+        </div>
+        <button class="options-menu-big">
+          <span class="btn-dots"></span>
+        </button>
+      </div>
+      <div class="content frame <%= dir %>">
+        <img src="<%= qr.svgURL %>" style="width: 66%; margin: 48px auto;" alt="">
+      </div>
+      <div class="datePlace-info">
+
+      </div>
+    </section>
+
+  </main>
+
+<%- contentFor('scripts') %>
