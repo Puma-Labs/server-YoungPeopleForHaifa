@@ -1,4 +1,20 @@
 <% const dir = lang ==="he" ? "rtl" : "ltr"; const qr=data || []; const emptyCover="/static/assets/images/preview-empty.png" %>
+  <style>
+    .content-title {
+      padding-top: .8rem; 
+      padding-bottom: .8rem;
+      font-size: 2rem;
+      font-size: 2rem;
+    }
+    .event-section {
+      max-width: 840px;
+      margin: 0 auto 4rem;
+    }
+    .event-section .content p {
+      font-size: 1.2rem;
+      margin-bottom: 1.6rem;
+    }
+  </style>
 
   <main>
     <section class="event-section" dir=<%=dir %>>
@@ -12,16 +28,31 @@
       </div>
       <div class="content frame <%= dir %>">
         <%- data.content %>
+        data.sheetURL
         <% if(data.sheetURL){ %>
-          <div class="content-card">
-            <!-- SECURITY FIX NEEDED -->
-            <%- data.sheetURL %>
-            <!-- <iframe src="<%= data.sheetURL %>" frameborder="0"></iframe> -->
+          <div id="sheet-wrapper">
+
           </div>
+            <!-- <iframe src="<%= data.sheetURL %>" frameborder="0"></iframe> -->
         <% } %>
       </div>
     </section>
 
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const SHEET_ID = '<%= data.sheetURL %>'
+
+        const iframe = document.createElement('iframe')
+
+        iframe.src = `https://docs.google.com/spreadsheets/d/e/${SHEET_ID}/pubhtml?widget=true&amp;headers=false`
+        iframe.addEventListener('load', () => {
+          console.log('iframe loaded!');
+        })
+        document.getElementById('sheet-wrapper').appendChild(iframe)
+        iframe.style.width = '100%'
+        iframe.style.height = '420px'
+      })
+    </script>
   </main>
 
   <%- contentFor('scripts') %>

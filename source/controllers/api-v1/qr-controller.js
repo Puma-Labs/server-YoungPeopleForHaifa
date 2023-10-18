@@ -31,7 +31,7 @@ class QRController {
         const url = `${process.env.SERVER_HOST}/images/qr/${qrId}`
         const svg = qrImageGen.imageSync(url, { type: 'svg' });
 
-        writeFile(path.resolve(__dirname, `../../../public/images/qr/${newQR._id}.svg`), svg)
+        writeFile(path.resolve(__dirname, `../../../public/images/qr/${newQR._id}.svg`), svg, () => {})
         newQR.svgURL = `${process.env.SERVER_HOST}/images/qr/${newQR._id}.svg`
 
         const newQRUpdate = await QRService.update(newQR)
@@ -42,7 +42,7 @@ class QRController {
     async delete(req, res) {
         const {id} = req.params
         const dataDelete = await QRService.remove(id)
-        unlink(path.resolve(__dirname, `../../../public/images/qr/${id}.svg`))
+        unlink(path.resolve(__dirname, `../../../public/images/qr/${id}.svg`), () => {})
         res.json(dataDelete)
     }
 }

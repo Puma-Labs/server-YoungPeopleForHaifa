@@ -103,7 +103,7 @@ class MainController {
     const lang = MainController.setLanguageCookie(req, res);
 
     res.render("qr", {
-      layout: "infoLayout",
+      layout: "layout",
       title: "",
       page: "qr",
       data: QR,
