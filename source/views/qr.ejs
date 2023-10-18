@@ -27,31 +27,36 @@
         </button>
       </div>
       <div class="content frame <%= dir %>">
-        <%- data.content %>
-        data.sheetURL
+        <div class="text-container">
+          <%- qr.content %>
+        </div>
         <% if(data.sheetURL){ %>
-          <div id="sheet-wrapper">
-
-          </div>
-            <!-- <iframe src="<%= data.sheetURL %>" frameborder="0"></iframe> -->
+          <div id="sheet-wrapper"></div>
         <% } %>
       </div>
     </section>
 
     <script>
+      const SHEET_ID = '<%= data.sheetURL %>'
+
       document.addEventListener('DOMContentLoaded', () => {
-        const SHEET_ID = '<%= data.sheetURL %>'
-
-        const iframe = document.createElement('iframe')
-
-        iframe.src = `https://docs.google.com/spreadsheets/d/e/${SHEET_ID}/pubhtml?widget=true&amp;headers=false`
-        iframe.addEventListener('load', () => {
-          console.log('iframe loaded!');
-        })
-        document.getElementById('sheet-wrapper').appendChild(iframe)
-        iframe.style.width = '100%'
-        iframe.style.height = '420px'
+        loadSheet(SHEET_ID)
       })
+
+
+      function loadSheet(SHEET_ID) {
+        return new Promise((resolve) => {
+          const iframe = document.createElement('iframe')
+
+          iframe.src = `https://docs.google.com/spreadsheets/d/e/${SHEET_ID}/pubhtml?widget=true&amp;headers=false`
+          iframe.addEventListener('load', () => {
+            resolve(iframe)
+          })
+          document.getElementById('sheet-wrapper').appendChild(iframe)
+          iframe.style.width = '100%'
+          iframe.style.height = '420px'
+        })
+      }
     </script>
   </main>
 

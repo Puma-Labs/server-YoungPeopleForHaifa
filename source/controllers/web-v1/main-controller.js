@@ -20,7 +20,6 @@ class MainController {
   }
 
   async eventsJSON(req, res) {
-      console.log('eventsJSON')
       const {page = 1, limit = 9} = req.query
       const selectedDate = req.query?.selectedDate;
 
@@ -58,9 +57,6 @@ class MainController {
     const upcomingEvents = await EventService.getUpcomingEvents(4);
     const lang = MainController.setLanguageCookie(req, res);
 
-
-   console.log('count', count)
-
     res.render("events", {
       title: "",
       page: "events",
@@ -93,12 +89,7 @@ class MainController {
 
   async qr(req, res) {
     const { id } = req.params;
-
-    console.log({ID: id});
-    // const {page = 1, limit = 9} = req.query
     const QR = await QRService.getOne(id);
-
-    console.log({QR});
 
     const lang = MainController.setLanguageCookie(req, res);
 
@@ -117,8 +108,6 @@ class MainController {
     // const {page = 1, limit = 9} = req.query
     const QR = await QRService.getOne(id);
     const lang = MainController.setLanguageCookie(req, res);
-
-    console.log({QR});
 
     res.render("qrImage", {
       layout: "infoLayout",
