@@ -4,14 +4,16 @@
     <section class="event-section" dir=<%=dir %>>
       <div class="top frame <%= dir %>">
         <div class="content-title">
-          <%= qr.title %>
+          [QR CODE] <%= qr.title %> 
         </div>
         <button class="options-menu-big">
           <span class="btn-dots"></span>
         </button>
       </div>
       <div class="content frame <%= dir %>">
-        <img src="<%= qr.svgURL %>" style="width: 66%; margin: 48px auto;" alt="">
+        <a href="<%= qr.svgURL %>" target="_blank" style="display: block;">
+          <img src="<%= qr.svgURL %>" style="width: 66%; margin: 48px auto;" alt="">
+        </a>
       </div>
       <div class="datePlace-info">
 
