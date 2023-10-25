@@ -13,7 +13,6 @@ let selectedDate;
 const datePicker = datepicker("#datepicker", {
   onSelect: (instance, date) => {
     selectedDate = date;
-    console.log(selectedDate);
   },
     formatter: (input, date, instance) => {
     const value = date.toLocaleDateString()

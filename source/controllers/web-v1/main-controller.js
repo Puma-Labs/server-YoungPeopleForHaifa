@@ -1,5 +1,6 @@
 const moment = require("moment");
 const EventService = require("../../service/event-service");
+const QRService = require("../../service/qr-service");
 
 class MainController {
 
@@ -19,7 +20,6 @@ class MainController {
   }
 
   async eventsJSON(req, res) {
-      console.log('eventsJSON')
       const {page = 1, limit = 9} = req.query
       const selectedDate = req.query?.selectedDate;
 
@@ -57,9 +57,6 @@ class MainController {
     const upcomingEvents = await EventService.getUpcomingEvents(4);
     const lang = MainController.setLanguageCookie(req, res);
 
-
-   console.log('count', count)
-
     res.render("events", {
       title: "",
       page: "events",
@@ -85,6 +82,38 @@ class MainController {
       page: "event",
       data: event,
       upcomingEvents,
+      lang,
+      moment,
+    });
+  }
+
+  async qr(req, res) {
+    const { id } = req.params;
+    const QR = await QRService.getOne(id);
+
+    const lang = MainController.setLanguageCookie(req, res);
+
+    res.render("qr", {
+      layout: "layout",
+      title: "",
+      page: "qr",
+      data: QR,
+      lang,
+      moment,
+    });
+  }
+
+  async qrImage(req, res) {
+    const { id } = req.params;
+    // const {page = 1, limit = 9} = req.query
+    const QR = await QRService.getOne(id);
+    const lang = MainController.setLanguageCookie(req, res);
+
+    res.render("qrImage", {
+      layout: "infoLayout",
+      title: "",
+      page: "qrImage",
+      data: QR,
       lang,
       moment,
     });

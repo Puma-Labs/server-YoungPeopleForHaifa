@@ -11,6 +11,9 @@ router.get("/events/", __asyncHandler(mainController.events));
 router.get("/events/json", __asyncHandler(mainController.eventsJSON));
 router.get("/events/:id", __asyncHandler(mainController.event));
 
+router.get("/qr/:id", __asyncHandler(mainController.qr));
+router.get("/qr/:id/image", __asyncHandler(mainController.qrImage));
+
 router.get("/*", __asyncHandler(__WEBE.notFound));
 
 module.exports = router;

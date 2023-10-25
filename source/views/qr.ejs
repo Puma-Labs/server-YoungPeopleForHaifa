@@ -1,0 +1,67 @@
+<% const dir = lang ==="he" ? "rtl" : "ltr"; const qr=data || []; const emptyCover="/static/assets/images/preview-empty.png" %>
+  <style>
+    .content-title {
+      padding-top: .8rem; 
+      padding-bottom: .8rem;
+      font-size: 2rem;
+      font-size: 2rem;
+    }
+    .event-section {
+      /* max-width: 840px; */
+      margin: 0 auto 4rem;
+    }
+    .event-section .content p {
+      font-size: 1.2rem;
+      margin-bottom: 1.6rem;
+    }
+    .event-section .content .text-container {
+      max-width: 840px;
+      margin: auto;
+    }
+  </style>
+
+  <main>
+    <section class="event-section" dir=<%=dir %>>
+      <div class="top frame <%= dir %>">
+        <div class="content-title">
+          <%= data.title %>
+        </div>
+        <button class="options-menu-big">
+          <span class="btn-dots"></span>
+        </button>
+      </div>
+      <div class="content frame <%= dir %>">
+        <div class="text-container">
+          <%- qr.content %>
+        </div>
+        <% if(data.sheetURL){ %>
+          <div id="sheet-wrapper"></div>
+        <% } %>
+      </div>
+    </section>
+
+    <script>
+      const SHEET_ID = '<%= data.sheetURL %>'
+
+      document.addEventListener('DOMContentLoaded', () => {
+        loadSheet(SHEET_ID)
+      })
+
+
+      function loadSheet(SHEET_ID) {
+        return new Promise((resolve) => {
+          const iframe = document.createElement('iframe')
+
+          iframe.src = `https://docs.google.com/spreadsheets/d/e/${SHEET_ID}/pubhtml?widget=true&amp;headers=false`
+          iframe.addEventListener('load', () => {
+            resolve(iframe)
+          })
+          document.getElementById('sheet-wrapper').appendChild(iframe)
+          iframe.style.width = '100%'
+          iframe.style.height = '420px'
+        })
+      }
+    </script>
+  </main>
+
+  <%- contentFor('scripts') %>
